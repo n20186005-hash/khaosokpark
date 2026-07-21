@@ -242,9 +242,9 @@
       "title": "Nearby Attractions",
       "cta": "Learn more",
       "items": [
-        { "name": "Cheow Lan Lake", "desc": "The emerald reservoir of limestone karsts and floating raft houses — Khao Sok's signature sight.", "url": "https://nps-office.dnp.go.th/parksdetail.php?id=21&name=%E0%B8%AD%E0%B8%8A.%E0%B9%80%E0%B8%82%E0%B8%B2%E0%B8%AA%E0%B8%81" },
-        { "name": "Ratchaprapha Dam", "desc": "The dam that created the lake, with viewpoints over the flooded valley.", "url": "https://nps-office.dnp.go.th/parksdetail.php?id=21&name=%E0%B8%AD%E0%B8%8A.%E0%B9%80%E0%B8%82%E0%B8%B2%E0%B8%AA%E0%B8%81" },
-        { "name": "Khlong Phanom National Park", "desc": "Adjacent rainforest with caves and waterfalls, great for quieter trekking.", "url": "https://nps-office.dnp.go.th/parksdetail.php?id=25&name=%E0%B8%AD%E0%B8%8A.%E0%B8%84%E0%B8%A5%E0%B8%AD%E0%B8%87%E0%B8%9E%E0%B8%99%E0%B8%A1" }
+        { "name": "Cheow Lan Lake", "desc": "The emerald reservoir of limestone karsts and floating raft houses — Khao Sok's signature sight.", "url": "https://portal.dnp.go.th/Content/nationalpark?contentId=35043" },
+        { "name": "Ratchaprapha Dam", "desc": "The dam that created the lake, with viewpoints over the flooded valley.", "url": "https://www.egat.co.th/home/en/ratchaprapha-dm/" },
+        { "name": "Khlong Phanom National Park", "desc": "Adjacent rainforest with caves and waterfalls, great for quieter trekking.", "url": "https://portal.dnp.go.th/Content/nationalpark?contentId=35032" }
       ]
     },
     "faqTitle": "Frequently Asked Questions",
@@ -361,7 +361,7 @@
     "note": "Details may change — please verify with Khao Sok National Park before travelling",
     "mapsLabel": "Google Maps →",
     "sourcesTitle": "Sources",
-    "sourcesNote": "Data referenced from the Department of National Parks, Wildlife and Plant Conservation (DNP) and Tourism Thailand (TAT); third-party reference: Thai National Parks (private/commercial guide, not an official body).",
+    "sourcesNote": "Data referenced from the Department of National Parks, Wildlife and Plant Conservation (DNP) and Tourism Thailand (TAT).",
     "privacy": "Privacy Policy",
     "terms": "Terms of Service",
     "cookies": "Cookies",
@@ -380,7 +380,7 @@
       { "text": "Photo sources include the Tourism Thailand (TAT) public image library and visitor-contributed open-licensed works." }
     ],
     "factTitle": "Data & facts",
-    "factText": "Attraction and history information is referenced from official sources — the Department of National Parks, Wildlife and Plant Conservation (DNP) and Tourism Thailand (TAT); third-party reference: Thai National Parks (private guide). Weather and daylight data come from the free Open-Meteo API.",
+    "factText": "Attraction and history information is referenced from official sources — the Department of National Parks, Wildlife and Plant Conservation (DNP) and Tourism Thailand (TAT). Weather and daylight data come from the free Open-Meteo API.",
     "correctionTitle": "Found a mistake? Let us know",
     "correctionText": "We strive for accuracy, but entrance fees and opening hours may change. If you spot any error, email us so we can fix it for every traveller.",
     "correctionCta": "Email a correction",

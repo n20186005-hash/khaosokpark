@@ -242,9 +242,9 @@
       "title": "周边景点",
       "cta": "了解更多",
       "items": [
-        { "name": "乔兰湖", "desc": "石灰岩峰林与湖上浮屋的翡翠水库——考索的标志性景观。", "url": "https://nps-office.dnp.go.th/parksdetail.php?id=21&name=%E0%B8%AD%E0%B8%8A.%E0%B9%80%E0%B8%82%E0%B8%B2%E0%B8%AA%E0%B8%81" },
-        { "name": "拉差帕普哈水坝", "desc": "造就湖泊的水坝，可俯瞰被淹没的山谷。", "url": "https://nps-office.dnp.go.th/parksdetail.php?id=21&name=%E0%B8%AD%E0%B8%8A.%E0%B9%80%E0%B8%82%E0%B8%B2%E0%B8%AA%E0%B8%81" },
-        { "name": "克隆帕侬国家公园", "desc": "相邻的雨林，有洞穴与瀑布，适合更安静的徒步。", "url": "https://nps-office.dnp.go.th/parksdetail.php?id=25&name=%E0%B8%AD%E0%B8%8A.%E0%B8%84%E0%B8%A5%E0%B8%AD%E0%B8%87%E0%B8%9E%E0%B8%99%E0%B8%A1" }
+        { "name": "乔兰湖", "desc": "石灰岩峰林与湖上浮屋的翡翠水库——考索的标志性景观。", "url": "https://portal.dnp.go.th/Content/nationalpark?contentId=35043" },
+        { "name": "拉差帕普哈水坝", "desc": "造就湖泊的水坝，可俯瞰被淹没的山谷。", "url": "https://www.egat.co.th/home/ratchaprapha-dm/" },
+        { "name": "克隆帕侬国家公园", "desc": "相邻的雨林，有洞穴与瀑布，适合更安静的徒步。", "url": "https://portal.dnp.go.th/Content/nationalpark?contentId=35032" }
       ]
     },
     "faqTitle": "常见问题",
@@ -361,7 +361,7 @@
     "note": "信息可能有变动，出行前请与考索国家公园核实",
     "mapsLabel": "Google Maps →",
     "sourcesTitle": "资料来源",
-    "sourcesNote": "资料参考：泰国国家公园野生动植物保护局（DNP）、泰国国家旅游局（TAT）；第三方参考：Thai National Parks（民间商业指南，非官方机构）。",
+    "sourcesNote": "资料参考：泰国国家公园野生动植物保护局（DNP）、泰国国家旅游局（TAT）。",
     "privacy": "隐私政策",
     "terms": "服务条款",
     "cookies": "Cookie 设置",
@@ -380,7 +380,7 @@
       { "text": "照片来源包括泰国国家旅游局（TAT）公开图库及游客投稿的开放授权作品。" }
     ],
     "factTitle": "数据与事实来源",
-    "factText": "景点信息与历史参考泰国国家公园野生动植物保护局（DNP）、泰国国家旅游局（TAT）等官方来源；第三方参考 Thai National Parks（民间指南，非官方）。天气与日照数据来自 Open-Meteo 免费的公开 API。",
+    "factText": "景点信息与历史参考泰国国家公园野生动植物保护局（DNP）、泰国国家旅游局（TAT）等官方来源。天气与日照数据来自 Open-Meteo 免费的公开 API。",
     "correctionTitle": "发现错误？请告诉我们",
     "correctionText": "我们尽力保证信息准确，但票价、开放时间等可能变动。若你发现任何差错，欢迎来信协助更正，让本指南对所有人更有帮助。",
     "correctionCta": "邮件反馈纠错",
