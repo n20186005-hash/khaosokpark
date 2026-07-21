@@ -80,6 +80,16 @@
     "heading": "Ancient Rainforest & Karst Ecosystem",
     "quote": "Few places on Earth pack so many life forms into one valley — from pitcher plants to prehistoric ferns.",
     "intro": "Khao Sok sits where two monsoon systems meet, making it one of the wettest and most biologically intense places in Thailand. The lowland evergreen rainforest climbs into limestone mountains (โควาหินปูน), while the lake adds a unique aquatic habitat.",
+    "checklist": {
+      "title": "🌿 Fauna & Flora Checklist",
+      "intro": "Take this checklist to Khao Sok and log your encounters with the rainforest's residents:",
+      "items": [
+        { "emoji": "🌸", "name": "Rafflesia kerrii", "best": "Best: Nov–Mar", "rare": "Rarity: ★★★★★" },
+        { "emoji": "🦜", "name": "Great Hornbill", "best": "Year-round · best at dawn/dusk in the canopy", "rare": "Rarity: ★★★★" },
+        { "emoji": "🐒", "name": "Lar Gibbon", "best": "Heard year-round · morning calls by the lake", "rare": "Rarity: ★★★★" },
+        { "emoji": "🐘", "name": "Asian Elephant", "best": "Deep forest / lake shores", "rare": "Caution: keep 50 m+ distance", "rareClass": "warn" }
+      ]
+    },
     "microTitle": "1. The Wettest Corner of Thailand",
     "micro": [
       { "title": "Two monsoons", "desc": "Both the southwest (May–Oct) and northeast (Nov–Feb) winds bring rain, so the forest stays lush almost year-round." },
@@ -89,7 +99,7 @@
     "plantsTitle": "2. A Botanical Time Capsule",
     "plants": [
       { "title": "Rafflesia kerrii — the giant flower", "desc": "Thailand's largest flower (up to 80 cm across) blooms briefly on forest vines; a true Khao Sok specialty.", "items": [
-        { "name": "Where to see it", "desc": "On guided treks in the rainy season — always with a certified guide, as the bloom is rare and protected." },
+        { "name": "Peak bloom (Nov–Mar)", "desc": "Seen with a certified guide leading you deep into the forest; in the rainy season trails are muddy and most Rafflesia are only buds or already decayed — not the best time to see them." },
         { "name": "Pitcher plants & orchids", "desc": "Hill streams hide Nepenthes pitcher plants; trunks wear epiphytic orchids and ferns." }
       ]},
       { "title": "Primary rainforest giants", "desc": "Towering dipterocarps, palms and rattan form layered canopy, understory and forest floor.", "items": [
@@ -117,24 +127,33 @@
     "heading": "The Story of Khao Sok",
     "intro": "From ancient rainforest to modern national park — and a lost valley now beneath the lake",
     "blocks": [
-      { "title": "A rainforest 160 million years old", "text": "Long before humans arrived, Khao Sok was already a primordial forest. Geologists estimate its rainforest ecosystem dates back roughly 160 million years — among the oldest on the planet." },
-      { "title": "Established as a national park (1980)", "text": "On 2 December 1980, Khao Sok was declared Thailand's 22nd national park by the Royal Forest Department, protecting 739 km² of forest and wildlife." },
-      { "title": "The Ratchaprapha Dam & Cheow Lan Lake", "text": "In the early 1980s the Electricity Generating Authority of Thailand (EGAT) built the Ratchaprapha Dam. The rising water flooded a hidden valley, creating the 165 km² Cheow Lan Lake — and submerging old villages and forests beneath its emerald surface." },
-      { "title": "From logging frontier to sanctuary", "text": "Like much of Southern Thailand, the area was once targeted for timber and rubber. Conservation turned it into one of the region's most important wildlife refuges, now linked to the Khlong Phanom and Kaeng Krung forests." }
+      { "title": "250 Million Years Ago — An Ancient Ocean Reef", "text": "The steep karst limestone peaks of Khao Sok are not ordinary mountains — they were once a vast coral reef in the Permian ocean 250 million years ago. Tectonic uplift raised them, and millions of years of rain carved them into the 'underwater Ha Long Bay' we see today." },
+      { "title": "160 Million Years — An Eternal Rainforest", "text": "When ice ages reshaped the planet, Khao Sok's position between two monsoon systems spared it from drought, leaving one of Earth's oldest, unbroken evergreen rainforests — estimated at around 160 million years old, older than the Amazon." },
+      { "title": "The 1970s — A Forest Sheltered by History", "text": "Between 1975 and 1982, Khao Sok's deep jungle and caves (such as Ai Po Cave) served as a hidden base for student activists and guerrillas. The military standoff that followed unexpectedly sealed off the area, keeping out commercial loggers and miners and miraculously sparing this ancient rainforest from the wholesale deforestation of 1970s Southeast Asia." },
+      { "title": "1980 — National Park & the Dam", "text": "In December 1980, Khao Sok became Thailand's 22nd national park. Soon after, the Ratchaprapha Dam was built; its rising waters created the ~165 km² emerald Cheow Lan Lake, turning a hidden valley into a stunning watery maze." }
     ],
     "legend": {
-      "title": "Local Legend",
-      "text": "Locals say the flooded valley still hides a spirit guardian beneath Cheow Lan Lake, and that on still nights you can hear the temple bells of the sunken villages ringing softly under the water."
+      "title": "📜 Place-name Legend: From 'Mountain of Corpses' to 'Mountain of Hair'",
+      "text": "The name 'Khao Sok' comes from a sorrowful past. In the late 19th century (or 1944, by some accounts), a severe epidemic (cholera/smallpox) ravaged local villages. The mountain was first named 'Khao Sop' (เขาศพ, 'Mountain of Corpses'). Later, to invite good fortune and dispel the gloom, locals changed the pronunciation to 'Khao Sok' (เขาสก, 'forest as lush and long as flowing hair'). Elders still believe the ancient village temples submerged by the dam guard the waters of Cheow Lan Lake, and that on calm mornings you may hear their serene bells ringing softly from below the surface."
     },
     "didYouKnow": {
       "title": "Did you know?",
-      "text": "Khao Sok's rainforest may be up to 160 million years old — older than the Amazon — and is home to one of the world's largest flowers, the Rafflesia kerrii."
+      "text": "Khao Sok's rainforest is around 160 million years old — older than the Amazon — and its limestone peaks that rise from the water are actually 250-million-year-old Permian coral reefs. It is also home to one of the world's largest flowers, the Rafflesia kerrii."
     }
   },
   "guide": {
     "label": "Visitor Guide",
     "heading": "Planning Your Visit",
     "lead": "Everything you need to explore Khao Sok safely — permits, transport, the lake and trekking",
+    "twoZone": {
+      "title": "Two Zones: Don't Go to the Wrong One",
+      "intro": "First-time visitors often confuse the 'Park HQ' with 'Cheow Lan Lake'. The two are about 50 km apart and offer very different experiences:",
+      "suitsLabel": "Best for: ",
+      "items": [
+        { "name": "Zone 1 · Main Park HQ (Phanom)", "suits": "Jungle trekking, waterfalls, Rafflesia spotting, tree-house stays", "desc": "In Phanom District, Surat Thani, postcode 84250. Land-based rainforest, trails, waterfalls and jungle lodges." },
+        { "name": "Zone 2 · Cheow Lan Lake (Ban Ta Khun)", "suits": "Long-tail boat trips, floating raft houses, limestone karsts (Three Sisters), cave visits", "desc": "In Ban Ta Khun District, postcode 84230. Reach it by boat from the Ratchaprapha Dam — the heart of the lake scenery and floating stays." }
+      ]
+    },
     "hours": {
       "tag": "Opening Hours",
       "title": "Opening Hours",
@@ -156,7 +175,7 @@
       "tag": "Getting There",
       "title": "How to Get There",
       "items": [
-        { "title": "From Surat Thani", "desc": "About 60 km (1–1.5 hrs) north; buses, minivans and taxis connect the city and railway station to the park." },
+        { "title": "From Surat Thani", "desc": "The park HQ (Phanom District) is about 110–120 km (1.5–2 hrs' drive) west (south-west) of Surat Thani city; the Ratchaprapha Dam pier for Cheow Lan Lake (Ban Ta Khun District) is about 60–65 km west. Buses, minivans and taxis connect the city, railway station and park." },
         { "title": "From Phuket / Krabi", "desc": "Roughly 2.5–3 hrs by road; many combine Khao Sok with Andaman coast trips." },
         { "title": "Lake & dam transfer", "desc": "The Ratchaprapha Dam (gateway to Cheow Lan Lake) is ~1 hr from the park HQ; most lake tours include transfer." },
         { "title": "From the airport", "desc": "Surat Thani Airport (URT) is ~70 km away; Phuket (HKT) and Krabi (KBV) are 2.5–3 hrs. Pre-book a van or join a tour." }
@@ -199,7 +218,7 @@
       "intro": "Khao Sok has two broad seasons. The dry window is most comfortable; the green season is lushest.",
       "seasons": [
         { "tag": "Dry season", "months": "Dec – Apr", "name": "Best weather · Easier trekking", "desc": "Lower rainfall, clearer trails and calm lake water — the most popular and comfortable time, though still humid. Book raft houses ahead." },
-        { "tag": "Green season", "months": "May – Nov", "name": "Lush & wild · Wildlife active", "desc": "Heavy monsoon rain fills the lake and triggers Rafflesia blooms and active wildlife, but trails can flood and leeches thrive. Bring serious rain gear." }
+        { "tag": "Green season", "months": "May – Nov", "name": "Lush & wild · Wildlife active", "desc": "Heavy monsoon rain fills the lake and makes vegetation lush — also the most spectacular waterfalls and active wildlife. But trails flood easily and leeches thrive, and this is NOT the Rafflesia peak (that is the dry season, Nov–Mar). Bring proper rain gear." }
       ]
     },
     "safety": {
@@ -223,9 +242,9 @@
       "title": "Nearby Attractions",
       "cta": "Learn more",
       "items": [
-        { "name": "Cheow Lan Lake", "desc": "The emerald reservoir of limestone karsts and floating raft houses — Khao Sok's signature sight.", "url": "https://www.thainationalparks.com/khao-sok-national-park" },
-        { "name": "Ratchaprapha Dam", "desc": "The dam that created the lake, with viewpoints over the flooded valley.", "url": "https://www.thainationalparks.com/khao-sok-national-park" },
-        { "name": "Khlong Phanom National Park", "desc": "Adjacent rainforest with caves and waterfalls, great for quieter trekking.", "url": "https://www.thainationalparks.com/khlong-phanom-national-park" }
+        { "name": "Cheow Lan Lake", "desc": "The emerald reservoir of limestone karsts and floating raft houses — Khao Sok's signature sight.", "url": "https://nps-office.dnp.go.th/parksdetail.php?id=21&name=%E0%B8%AD%E0%B8%8A.%E0%B9%80%E0%B8%82%E0%B8%B2%E0%B8%AA%E0%B8%81" },
+        { "name": "Ratchaprapha Dam", "desc": "The dam that created the lake, with viewpoints over the flooded valley.", "url": "https://nps-office.dnp.go.th/parksdetail.php?id=21&name=%E0%B8%AD%E0%B8%8A.%E0%B9%80%E0%B8%82%E0%B8%B2%E0%B8%AA%E0%B8%81" },
+        { "name": "Khlong Phanom National Park", "desc": "Adjacent rainforest with caves and waterfalls, great for quieter trekking.", "url": "https://nps-office.dnp.go.th/parksdetail.php?id=25&name=%E0%B8%AD%E0%B8%8A.%E0%B8%84%E0%B8%A5%E0%B8%AD%E0%B8%87%E0%B8%9E%E0%B8%99%E0%B8%A1" }
       ]
     },
     "faqTitle": "Frequently Asked Questions",
@@ -311,13 +330,13 @@
   "mapSection": {
     "label": "Location",
     "heading": "How to Find Khao Sok",
-    "lead": "In Surat Thani Province, Southern Thailand — about 60 km north of Surat Thani city",
+    "lead": "In Surat Thani Province, Southern Thailand — the park HQ lies about 110–120 km west (south-west) of Surat Thani city, while the Cheow Lan Lake pier (Ban Ta Khun) is about 60–65 km west of the city; the two zones are ~50 km apart.",
     "stats": [
       { "tag": "Province", "value": "Surat Thani", "sub": "Thailand" },
       { "tag": "Coordinates", "value": "8.9333, 98.5167", "sub": "8.9333° N, 98.5167° E" },
-      { "tag": "Distance", "value": "~60 km", "sub": "from Surat Thani" }
+      { "tag": "Distance", "value": "HQ ~110 km", "sub": "Lake pier ~60 km (both west of city)" }
     ],
-    "address": "Khao Phang, Ban Takun District, Surat Thani 84250, Thailand",
+    "address": "Park HQ / Visitor Centre: Khao Sok, Phanom District, Surat Thani 84250; Cheow Lan Lake pier / Ratchaprapha Dam: Khao Phang, Ban Ta Khun District 84230 (the two zones are ~50 km apart — don't navigate to the wrong one).",
     "plusCode": "XJHQ+37",
     "coords": "8.9333° N, 98.5167° E"
   },
@@ -342,7 +361,7 @@
     "note": "Details may change — please verify with Khao Sok National Park before travelling",
     "mapsLabel": "Google Maps →",
     "sourcesTitle": "Sources",
-    "sourcesNote": "History and facts referenced from Tourism Thailand, DNP Thailand and Thai National Parks",
+    "sourcesNote": "Data referenced from the Department of National Parks, Wildlife and Plant Conservation (DNP) and Tourism Thailand (TAT); third-party reference: Thai National Parks (private/commercial guide, not an official body).",
     "privacy": "Privacy Policy",
     "terms": "Terms of Service",
     "cookies": "Cookies",
@@ -361,7 +380,7 @@
       { "text": "Photo sources include the Tourism Thailand (TAT) public image library and visitor-contributed open-licensed works." }
     ],
     "factTitle": "Data & facts",
-    "factText": "Attraction and history information is referenced from Tourism Thailand, DNP Thailand and Thai National Parks; weather and daylight data come from the free Open-Meteo API.",
+    "factText": "Attraction and history information is referenced from official sources — the Department of National Parks, Wildlife and Plant Conservation (DNP) and Tourism Thailand (TAT); third-party reference: Thai National Parks (private guide). Weather and daylight data come from the free Open-Meteo API.",
     "correctionTitle": "Found a mistake? Let us know",
     "correctionText": "We strive for accuracy, but entrance fees and opening hours may change. If you spot any error, email us so we can fix it for every traveller.",
     "correctionCta": "Email a correction",

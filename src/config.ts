@@ -23,7 +23,7 @@ export const siteConfig = {
   // 结构化数据 sameAs（权威资料页）
   sameAs: [
     'https://maps.app.goo.gl/CdsMQbv2pSAoRrk37',
-    'https://www.thainationalparks.com/khao-sok-national-park',
+    'https://nps-office.dnp.go.th/parksdetail.php?id=21&name=%E0%B8%AD%E0%B8%8A.%E0%B9%80%E0%B8%82%E0%B8%B2%E0%B8%AA%E0%B8%81',
   ],
 
   address: 'Khao Phang, Ban Takun District, Surat Thani 84250, Thailand',
@@ -40,8 +40,8 @@ export const siteConfig = {
       icon: 'globe',
     },
     {
-      name: 'Thai National Parks',
-      href: 'https://www.thainationalparks.com/khao-sok-national-park',
+      name: 'DNP Thailand',
+      href: 'https://nps-office.dnp.go.th/parksdetail.php?id=21&name=%E0%B8%AD%E0%B8%8A.%E0%B9%80%E0%B8%82%E0%B8%B2%E0%B8%AA%E0%B8%81',
       icon: 'tree',
     },
     {
@@ -62,7 +62,11 @@ export const siteConfig = {
       url: 'https://www.dnp.go.th/',
     },
     {
-      name: { th: 'Thai National Parks', en: 'Thai National Parks', zh: '泰国国家公园资料库' },
+      name: { th: 'อุทยานแห่งชาติเขาสก (กรมอุทยาน)', en: 'Khao Sok NP (DNP)', zh: '考索国家公园（国家公园厅）' },
+      url: 'https://nps-office.dnp.go.th/parksdetail.php?id=21&name=%E0%B8%AD%E0%B8%8A.%E0%B9%80%E0%B8%82%E0%B8%B2%E0%B8%AA%E0%B8%81',
+    },
+    {
+      name: { th: 'Thai National Parks (คู่มือเอกชน)', en: 'Thai National Parks (Private Guide)', zh: 'Thai National Parks（民间指南）' },
       url: 'https://www.thainationalparks.com/khao-sok-national-park',
     },
   ],

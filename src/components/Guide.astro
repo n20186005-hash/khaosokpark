@@ -18,6 +18,23 @@ const guideImgs = [
     <h2 class="font-display font-semibold text-3xl md:text-5xl text-teak mt-2">{guide.heading}</h2>
     <p class="mt-4 max-w-2xl text-ink/80">{guide.lead}</p>
 
+    <!-- Two-Zone guide -->
+    {guide.twoZone && (
+      <div class="mt-10 rounded-2xl border border-gold/30 bg-white/60 p-6 max-w-4xl shadow-sm">
+        <h3 class="font-display text-2xl text-teak mb-1">{guide.twoZone.title}</h3>
+        <p class="text-sm text-ink/75 mb-5">{guide.twoZone.intro}</p>
+        <div class="grid sm:grid-cols-2 gap-4">
+          {guide.twoZone.items.map((z) => (
+            <div class="rounded-xl border border-gold/25 bg-teak/5 p-5">
+              <div class="font-display text-teak font-semibold text-lg">{z.name}</div>
+              <p class="mt-2 text-sm text-ink/75"><span class="font-medium text-gold">{guide.twoZone.suitsLabel}</span> {z.suits}</p>
+              <p class="mt-2 text-sm text-ink/70">{z.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    )}
+
     <!-- Anti Scam Tip -->
     {guide.scamTip && (
       <div class="mt-8 rounded-xl bg-red-50 border border-red-200 p-5 max-w-4xl shadow-sm">
