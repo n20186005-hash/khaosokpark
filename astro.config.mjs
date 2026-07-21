@@ -3,7 +3,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://khaosoknationalpark.com',
+  site: 'https://khaosokpark.com',
   output: 'static',
   i18n: {
     defaultLocale: 'th',

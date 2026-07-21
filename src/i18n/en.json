@@ -1,0 +1,402 @@
+{
+  "meta": {
+    "title": "Khao Sok National Park — Guide to Thailand's Ancient Rainforest & Cheow Lan Lake",
+    "description": "A complete visitor guide to Khao Sok National Park in Surat Thani — one of the world's oldest rainforests, the emerald Cheow Lan Lake, wildlife, history, fees and real traveler reviews."
+  },
+  "header": {
+    "home": "Home",
+    "about": "About",
+    "history": "History",
+    "guide": "Guide",
+    "food": "Food",
+    "gallery": "Gallery",
+    "reviews": "Reviews",
+    "map": "Map"
+  },
+  "hero": {
+    "eyebrow": "National Park · Surat Thani, Southern Thailand",
+    "titleMain": "Khao Sok",
+    "titleAccent": " National Park",
+    "subtitle": "One of the world's oldest rainforests and the wild heart of Southern Thailand — towering limestone karsts, the emerald Cheow Lan Lake and rare wildlife around every corner.",
+    "rating": "4.7",
+    "reviews": "8,791",
+    "reviewCount": "8,791",
+    "category": "National Park",
+    "badge": "Surat Thani · Southern Thailand",
+    "cta1": "Get Directions",
+    "cta2": "View Photos",
+    "cta": "Get Directions",
+    "secondaryCta": "View Photos",
+    "viewLocation": "View on Google Maps",
+    "boardCategory": "National Park · Surat Thani",
+    "boardTitle": "Khao Sok National Park",
+    "boardEn": "KHAO SOK NATIONAL PARK",
+    "plannerTitle": "Today's Weather & Light Windows",
+    "plannerNote": "Live weather at Khao Sok",
+    "liveWeather": "Live weather",
+    "loading": "Loading on-site weather…",
+    "weatherError": "Weather data unavailable — showing typical reference values",
+    "goldenHourLabel": "Golden hour",
+    "sunsetLabel": "Sunset",
+    "blueHourLabel": "Blue hour",
+    "crowdWarningLabel": "Travel tip",
+    "crowdAfter": "Arrive early for calm lake water and morning mist",
+    "lightCaption": "Times computed from Khao Sok's real coordinates",
+    "coordsLabel": "Khao Sok National Park · Surat Thani",
+    "defaultTemp": "29°",
+    "defaultCond": "Humid / showers",
+    "defaultWind": "6 km/h",
+    "defaultGolden": "06:30 – 08:00",
+    "defaultSunset": "18:40",
+    "defaultBlue": "19:00 – 19:30",
+    "defaultTip": "Pack rain gear year-round — this is Thailand's wettest spot"
+  },
+  "about": {
+    "label": "About",
+    "heading": "Khao Sok National Park — Southern Thailand's Wild Heart",
+    "lead": "A 739 km² sanctuary of primeval rainforest, hidden lakes and some of Southeast Asia's richest wildlife",
+    "paragraph1": "Khao Sok National Park covers about 739 km² in Surat Thani Province, Southern Thailand. Established in 1980 as the country's 22nd national park, it protects one of the oldest rainforests on Earth — its ecosystem is estimated to be around 160 million years old, far older than the Amazon.",
+    "paragraph2": "At its centre lies Cheow Lan Lake (ทะเลสาบเชี้ยวหลาน), a vast emerald reservoir created in the early 1980s when the Ratchaprapha Dam flooded a hidden valley. Today the lake's limestone karsts rise straight from the water, sheltering gibbons, hornbills and — with luck — wild elephants.",
+    "quote": "Stand still on the lake at dawn and the only sound is the call of a gibbon echoing across 160 million years of forest.",
+    "quoteAuthor": "— A ranger at Khao Sok",
+    "stats": [
+      { "value": "~739 km²", "label": "Area" },
+      { "value": "4.7", "label": "Rating" },
+      { "value": "1980", "label": "Established" }
+    ],
+    "highlights": [
+      { "tag": "Rainforest", "title": "One of Earth's oldest", "desc": "A rainforest some scientists date to 160 million years — older than the Amazon and rich with rare plants" },
+      { "tag": "Lake", "title": "Cheow Lan Lake", "desc": "A 165 km² emerald reservoir of limestone karsts and floating raft-house lodges" },
+      { "tag": "Wildlife", "title": "Rare & endangered", "desc": "Home to elephants, gibbons, tapirs, hornbills and the giant Rafflesia kerrii flower" }
+    ],
+    "editorTip": {
+      "tag": "Editor's Tip",
+      "text": "Stay at least one night on a lake raft house — dawn mist on the karsts is unforgettable",
+      "ctaLabel": "See map"
+    }
+  },
+  "eco": {
+    "label": "Ecology",
+    "heading": "Ancient Rainforest & Karst Ecosystem",
+    "quote": "Few places on Earth pack so many life forms into one valley — from pitcher plants to prehistoric ferns.",
+    "intro": "Khao Sok sits where two monsoon systems meet, making it one of the wettest and most biologically intense places in Thailand. The lowland evergreen rainforest climbs into limestone mountains (โควาหินปูน), while the lake adds a unique aquatic habitat.",
+    "microTitle": "1. The Wettest Corner of Thailand",
+    "micro": [
+      { "title": "Two monsoons", "desc": "Both the southwest (May–Oct) and northeast (Nov–Feb) winds bring rain, so the forest stays lush almost year-round." },
+      { "title": "Cloud-catching peaks", "desc": "Mist clings to the karsts daily, dripping moisture that feeds countless ferns, mosses and orchids." },
+      { "title": "Carbon-rich old growth", "desc": "Unbroken ancient forest stores vast carbon and shelters species found almost nowhere else." }
+    ],
+    "plantsTitle": "2. A Botanical Time Capsule",
+    "plants": [
+      { "title": "Rafflesia kerrii — the giant flower", "desc": "Thailand's largest flower (up to 80 cm across) blooms briefly on forest vines; a true Khao Sok specialty.", "items": [
+        { "name": "Where to see it", "desc": "On guided treks in the rainy season — always with a certified guide, as the bloom is rare and protected." },
+        { "name": "Pitcher plants & orchids", "desc": "Hill streams hide Nepenthes pitcher plants; trunks wear epiphytic orchids and ferns." }
+      ]},
+      { "title": "Primary rainforest giants", "desc": "Towering dipterocarps, palms and rattan form layered canopy, understory and forest floor.", "items": [
+        { "name": "Wild bananas & gingers", "desc": "Shady trails glow with wild ginger flowers and begonias." },
+        { "name": "Bamboo & rattan", "desc": "Dense thickets that shelter small mammals and birds." }
+      ]},
+      { "title": "Limestone cliff flora", "desc": "Sheer karst walls host unique ferns and fig trees whose fruits draw hornbills and gibbons." }
+    ],
+    "wildlifeTitle": "3. Wildlife of the Food Chain",
+    "wildlife": [
+      "Mammals: Asian elephant, Malayan tapir, gaur, leopard, dhole and several gibbon species roam the deeper forest",
+      "Birds: hornbills (great, wreathed, bushy-crested), broadbills, kingfishers and migratory species over the lake",
+      "Reptiles & amphibians: monitor lizards, reticulated pythons and a chorus of frogs after rain"
+    ],
+    "lntTitle": "4. Protection: Leave No Trace",
+    "lntIntro": "This is a fragile, protected rainforest — small actions keep it wild for the next visitor.",
+    "lnt": [
+      "Stay on trails and boardwalks; never pick Rafflesia, orchids or any plant",
+      "Take all rubbish out — there is no bin on the lake or deep trails",
+      "Keep quiet on night safaris and never feed or approach wildlife"
+    ]
+  },
+  "history": {
+    "label": "History",
+    "heading": "The Story of Khao Sok",
+    "intro": "From ancient rainforest to modern national park — and a lost valley now beneath the lake",
+    "blocks": [
+      { "title": "A rainforest 160 million years old", "text": "Long before humans arrived, Khao Sok was already a primordial forest. Geologists estimate its rainforest ecosystem dates back roughly 160 million years — among the oldest on the planet." },
+      { "title": "Established as a national park (1980)", "text": "On 2 December 1980, Khao Sok was declared Thailand's 22nd national park by the Royal Forest Department, protecting 739 km² of forest and wildlife." },
+      { "title": "The Ratchaprapha Dam & Cheow Lan Lake", "text": "In the early 1980s the Electricity Generating Authority of Thailand (EGAT) built the Ratchaprapha Dam. The rising water flooded a hidden valley, creating the 165 km² Cheow Lan Lake — and submerging old villages and forests beneath its emerald surface." },
+      { "title": "From logging frontier to sanctuary", "text": "Like much of Southern Thailand, the area was once targeted for timber and rubber. Conservation turned it into one of the region's most important wildlife refuges, now linked to the Khlong Phanom and Kaeng Krung forests." }
+    ],
+    "legend": {
+      "title": "Local Legend",
+      "text": "Locals say the flooded valley still hides a spirit guardian beneath Cheow Lan Lake, and that on still nights you can hear the temple bells of the sunken villages ringing softly under the water."
+    },
+    "didYouKnow": {
+      "title": "Did you know?",
+      "text": "Khao Sok's rainforest may be up to 160 million years old — older than the Amazon — and is home to one of the world's largest flowers, the Rafflesia kerrii."
+    }
+  },
+  "guide": {
+    "label": "Visitor Guide",
+    "heading": "Planning Your Visit",
+    "lead": "Everything you need to explore Khao Sok safely — permits, transport, the lake and trekking",
+    "hours": {
+      "tag": "Opening Hours",
+      "title": "Opening Hours",
+      "time": "08:00 – 17:00",
+      "items": [
+        { "label": "Daily (Mon–Sun)", "value": "08:00–17:00" }
+      ]
+    },
+    "fees": {
+      "tag": "Entrance Fee",
+      "title": "National Park Entrance Fee",
+      "items": [
+        { "title": "Foreigners (adult)", "desc": "300 THB" },
+        { "title": "Foreigners (child)", "desc": "150 THB" },
+        { "title": "Thai nationals (adult/child)", "desc": "50 / 20 THB" }
+      ]
+    },
+    "transport": {
+      "tag": "Getting There",
+      "title": "How to Get There",
+      "items": [
+        { "title": "From Surat Thani", "desc": "About 60 km (1–1.5 hrs) north; buses, minivans and taxis connect the city and railway station to the park." },
+        { "title": "From Phuket / Krabi", "desc": "Roughly 2.5–3 hrs by road; many combine Khao Sok with Andaman coast trips." },
+        { "title": "Lake & dam transfer", "desc": "The Ratchaprapha Dam (gateway to Cheow Lan Lake) is ~1 hr from the park HQ; most lake tours include transfer." },
+        { "title": "From the airport", "desc": "Surat Thani Airport (URT) is ~70 km away; Phuket (HKT) and Krabi (KBV) are 2.5–3 hrs. Pre-book a van or join a tour." }
+      ]
+    },
+    "photography": {
+      "title": "Photography & Lake Guide",
+      "intro": "Khao Sok is a photographer's dream: misty karsts at dawn, glassy lake reflections and wildlife in low light.",
+      "timesTitle": "Best Light Windows",
+      "times": [
+        { "period": "06:30 – 08:30", "desc": "Dawn mist on the lake — soft light, glassy water and the iconic karst silhouettes. Best for raft-house sunrise shots." },
+        { "period": "09:00 – 11:00", "desc": "Clearer skies; good for trekking photos, waterfalls and wildlife along the trails." },
+        { "period": "16:30 – 18:30", "desc": "Golden light on the limestone cliffs; the lake turns amber before sunset." }
+      ],
+      "spotsTitle": "3 Golden Spots",
+      "viewLabel": "View:",
+      "tipLabel": "Composition:",
+      "spots": [
+        { "name": "Cheow Lan Lake at dawn", "view": "Limestone karsts mirrored in still water — the postcard shot of Khao Sok.", "tip": "Shoot from a raft house or long-tail boat at first light; use a wide lens and a polariser to deepen the emerald water." },
+        { "name": "Nam Talu Cave mouth", "view": "Dramatic limestone gorge where a cool stream meets the jungle.", "tip": "Bring a waterproof bag; long exposure on the flowing stream gives silky water." },
+        { "name": "Jungle trek viewpoint", "view": "Canopy walkways and ridges open onto valley panoramas.", "tip": "Use a telephoto to compress layers of mist and forest." }
+      ],
+      "settingsTitle": "Camera & Phone Settings",
+      "cameraLabel": "Camera:",
+      "phoneLabel": "Phone:",
+      "settings": [
+        { "style": "Misty lake (slow shutter)", "camera": "Shutter 1/4s–1s · f/8–f/11 · ISO 100 · tripod + ND filter", "phone": "iPhone: shoot Live Photo then 'Long Exposure'. Android: Pro mode, shutter 0.5s–1s." },
+        { "style": "Wildlife & karst freeze", "camera": "Shutter 1/500s–1/1000s · f/4–f/5.6 · ISO 400 · telephoto 200–400mm", "phone": "Tap the subject to focus; use 2×–5× zoom and burst mode for birds." }
+      ],
+      "tipsTitle": "Gear Care & Pitfalls",
+      "tips": [
+        "Humidity is extreme — pack silica gel and a dry bag for cameras and phones.",
+        "A polariser is the karst cheat: it cuts glare on water and deepens the emerald tones.",
+        "Leeches are common on wet trails — wear long socks and check legs after treks.",
+        "Boats move; brace your camera or use faster shutter to avoid blur on the lake."
+      ]
+    },
+    "bestTime": {
+      "title": "Best Season",
+      "intro": "Khao Sok has two broad seasons. The dry window is most comfortable; the green season is lushest.",
+      "seasons": [
+        { "tag": "Dry season", "months": "Dec – Apr", "name": "Best weather · Easier trekking", "desc": "Lower rainfall, clearer trails and calm lake water — the most popular and comfortable time, though still humid. Book raft houses ahead." },
+        { "tag": "Green season", "months": "May – Nov", "name": "Lush & wild · Wildlife active", "desc": "Heavy monsoon rain fills the lake and triggers Rafflesia blooms and active wildlife, but trails can flood and leeches thrive. Bring serious rain gear." }
+      ]
+    },
+    "safety": {
+      "title": "Safety Tips",
+      "items": [
+        { "title": "Leeches & insects", "desc": "Wet forest means leeches and mosquitoes — use repellent and cover up on treks." },
+        { "title": "Boat & lake safety", "desc": "Always wear a life jacket on long-tail boats; weather on the lake can change fast." },
+        { "title": "Wild elephants", "desc": "Never approach or feed elephants; keep a safe distance and follow your guide." }
+      ]
+    },
+    "accessibility": {
+      "title": "Accessibility & Family Tips",
+      "intro": "The park HQ and lake pier are easy to reach, though deep jungle treks are rugged.",
+      "items": [
+        { "title": "Easy HQ access", "desc": "The visitor centre, restaurants and boat pier are near the road with parking and toilets." },
+        { "title": "Gentle options", "desc": "Short nature trails and a boat cruise suit families and seniors; longer treks need fitness." },
+        { "title": "Facilities", "desc": "Shops, food stalls and lodges cluster near the entrance; avoid midday heat — go early or late." }
+      ]
+    },
+    "nearby": {
+      "title": "Nearby Attractions",
+      "cta": "Learn more",
+      "items": [
+        { "name": "Cheow Lan Lake", "desc": "The emerald reservoir of limestone karsts and floating raft houses — Khao Sok's signature sight.", "url": "https://www.thainationalparks.com/khao-sok-national-park" },
+        { "name": "Ratchaprapha Dam", "desc": "The dam that created the lake, with viewpoints over the flooded valley.", "url": "https://www.thainationalparks.com/khao-sok-national-park" },
+        { "name": "Khlong Phanom National Park", "desc": "Adjacent rainforest with caves and waterfalls, great for quieter trekking.", "url": "https://www.thainationalparks.com/khlong-phanom-national-park" }
+      ]
+    },
+    "faqTitle": "Frequently Asked Questions",
+    "faqs": [
+      { "q": "When is the best time to visit Khao Sok?", "a": "December to April is driest and most comfortable; May to November is lush and wildlife-rich but wet. The lake is beautiful year-round." },
+      { "q": "Do I need a guide for trekking?", "a": "Short trails are self-guided, but jungle treks, caves and Rafflesia spotting require a certified guide, arranged at the park HQ." },
+      { "q": "Can I stay on Cheow Lan Lake?", "a": "Yes — floating raft-house lodges offer overnight stays with meals; most packages include boat transfer from the dam." },
+      { "q": "Is there an entrance fee?", "a": "Yes — the park entrance fee applies (foreigners 300/150 THB, Thais 50/20 THB); lake boat tours are priced separately." },
+      { "q": "How do I get there from the coast?", "a": "Phuket and Krabi are about 2.5–3 hours away by road; many visitors combine Khao Sok with an Andaman beach trip." }
+    ]
+  },
+  "food": {
+    "label": "Food & Drink",
+    "heading": "Food in & Around the Park",
+    "lead": "Southern Thai flavours and simple jungle meals — many enjoyed on the lake itself",
+    "dishes": [
+      { "tag": "Southern", "name": "Gaeng Tai Pla", "price": "from 80 THB", "desc": "Fiery Southern Thai curry with fermented fish paste — bold and aromatic" },
+      { "tag": "Lake", "name": "Freshwater fish", "price": "from 120 THB", "desc": "Grilled or fried fish from the lake, served at raft-house restaurants" },
+      { "tag": "Snack", "name": "Khao Yam", "price": "60 THB", "desc": "Herbal rice salad with lemongrass, lime and grated coconut" },
+      { "tag": "Drink", "name": "Fresh coconut", "price": "40 THB", "desc": "Chilled young coconut — the perfect trail refresher" },
+      { "tag": "Fruit", "name": "Seasonal tropical fruit", "price": "seasonal", "desc": "Rambutan, mangosteen and durian in season from local orchards" }
+    ],
+    "quote": {
+      "text": "Breakfast on a raft house, watching mist lift off the karsts — that's Khao Sok.",
+      "author": "— A lake overnight guest"
+    }
+  },
+  "gallery": {
+    "label": "Gallery",
+    "heading": "Scenes of Khao Sok National Park",
+    "intro": "Limestone karsts, the emerald lake, deep rainforest and the wildlife that calls it home",
+    "alts": [
+      "Khao Sok National Park welcome sign",
+      "Cheow Lan Lake and limestone karsts",
+      "Emerald water reflecting the cliffs",
+      "Limestone mountains rising from the lake",
+      "Jungle trek through ancient rainforest",
+      "A long-tail boat on the lake",
+      "Floating raft-house lodge",
+      "Mist over the karsts at dawn",
+      "Dense evergreen rainforest",
+      "Nam Talu Cave entrance",
+      "Wildlife along the forest trail",
+      "Gibbon in the canopy",
+      "Rafflesia kerrii, the giant flower",
+      "Hornbill perched on a branch",
+      "Stream through the forest",
+      "Wooden walkway in the jungle",
+      "Ratchaprapha Dam viewpoint",
+      "Sunset over Cheow Lan Lake",
+      "Lotus and lilies on the water",
+      "Canopy of the ancient forest",
+      "Boardwalk through wetland",
+      "Local village near the park",
+      "Bamboo and rattan thicket",
+      "Panorama of the valley",
+      "Stars above the rainforest"
+    ],
+    "viewLocation": "View on Google Maps"
+  },
+  "reviews": {
+    "label": "Reviews",
+    "heading": "What Visitors Say",
+    "intro": "A summary of traveller feedback on Google Maps to help you plan",
+    "disclaimer": "Summarised from public Google Maps reviews; not the site's own opinion",
+    "declaration": "As a non-profit educational site, we present both highlights and cautions honestly",
+    "featured": [
+      { "text": "The lake at sunrise is unreal — mist, karsts and total silence. A highlight of our Thailand trip.", "source": "— Summarised from Google Maps" },
+      { "text": "Our night safari spotted gibbons and so many birds. The rainforest feels truly ancient.", "source": "— Summarised from Google Maps" }
+    ],
+    "items": [
+      { "text": "Cheow Lan Lake blew us away — stayed on a raft house and woke to mist on the water.", "rating": 5, "name": "Emma L.", "date": "Mar 2026" },
+      { "text": "Great jungle trek with a guide who showed us Rafflesia and pitcher plants.", "rating": 5, "name": "Somchai Y.", "date": "Feb 2026" },
+      { "text": "Very humid and leeches on the trail, but worth it for the scenery.", "rating": 4, "name": "David P.", "date": "Jan 2026" },
+      { "text": "Took a long-tail boat at dawn — the karst reflections were perfect for photos.", "rating": 5, "name": "Nina K.", "date": "Dec 2025" },
+      { "text": "Quiet, wild and beautiful. Bring rain gear even in the dry season.", "rating": 5, "name": "Aiko T.", "date": "Nov 2025" },
+      { "text": "The dam viewpoint is stunning; wish we'd booked two nights on the lake.", "rating": 4, "name": "Tom B.", "date": "Oct 2025" },
+      { "text": "Family trip — kids loved the canoe and the cave. Easy enough near the HQ.", "rating": 5, "name": "Jira W.", "date": "Sep 2025" },
+      { "text": "Busy at holidays; arrive early for parking and calmer water.", "rating": 4, "name": "Witthaya T.", "date": "Aug 2025" }
+    ],
+    "viewLocation": "View on Google Maps"
+  },
+  "mapSection": {
+    "label": "Location",
+    "heading": "How to Find Khao Sok",
+    "lead": "In Surat Thani Province, Southern Thailand — about 60 km north of Surat Thani city",
+    "stats": [
+      { "tag": "Province", "value": "Surat Thani", "sub": "Thailand" },
+      { "tag": "Coordinates", "value": "8.9333, 98.5167", "sub": "8.9333° N, 98.5167° E" },
+      { "tag": "Distance", "value": "~60 km", "sub": "from Surat Thani" }
+    ],
+    "address": "Khao Phang, Ban Takun District, Surat Thani 84250, Thailand",
+    "plusCode": "XJHQ+37",
+    "coords": "8.9333° N, 98.5167° E"
+  },
+  "footer": {
+    "brand": {
+      "name": "Khao Sok National Park",
+      "tagline": "A non-profit conservation & travel info station"
+    },
+    "about": "This site shares knowledge and history about Khao Sok National Park, with no commercial interest",
+    "navTitle": "Menu",
+    "navItems": [
+      { "label": "Home", "href": "#top" },
+      { "label": "About", "href": "#about" },
+      { "label": "History", "href": "#history" },
+      { "label": "Guide", "href": "#guide" },
+      { "label": "Food", "href": "#food" },
+      { "label": "Gallery", "href": "#gallery" },
+      { "label": "Reviews", "href": "#reviews" },
+      { "label": "Map", "href": "#map" }
+    ],
+    "noteTitle": "Note",
+    "note": "Details may change — please verify with Khao Sok National Park before travelling",
+    "mapsLabel": "Google Maps →",
+    "sourcesTitle": "Sources",
+    "sourcesNote": "History and facts referenced from Tourism Thailand, DNP Thailand and Thai National Parks",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "cookies": "Cookies",
+    "disclaimerLead": "This site is not affiliated with any government body or the park's operator",
+    "unofficial": "An independent resource maintained by volunteers",
+    "dataSource": "Weather: Open-Meteo · Coordinates: 8.9333, 98.5167",
+    "copyright": "© 2026 Khao Sok National Park Info Station. All rights reserved."
+  },
+  "sources": {
+    "label": "Sources",
+    "heading": "Sources & Photo Licensing",
+    "intro": "This site is a non-profit educational project. Content is compiled from public sources and photos are used under Creative Commons (CC) licences; copyright belongs to the original authors. Corrections are always welcome.",
+    "photoTitle": "Photo licensing",
+    "photoItems": [
+      { "text": "Gallery photos are used under CC BY / CC BY-SA and other Creative Commons licences.", "url": "https://creativecommons.org/licenses/", "linkLabel": "View CC licences" },
+      { "text": "Photo sources include the Tourism Thailand (TAT) public image library and visitor-contributed open-licensed works." }
+    ],
+    "factTitle": "Data & facts",
+    "factText": "Attraction and history information is referenced from Tourism Thailand, DNP Thailand and Thai National Parks; weather and daylight data come from the free Open-Meteo API.",
+    "correctionTitle": "Found a mistake? Let us know",
+    "correctionText": "We strive for accuracy, but entrance fees and opening hours may change. If you spot any error, email us so we can fix it for every traveller.",
+    "correctionCta": "Email a correction",
+    "correctionMailto": "mailto:n20186005@gmail.com?subject=Khao%20Sok%20National%20Park%20correction",
+    "copyright": "Khao Sok National Park Info Station"
+  },
+  "legal": {
+    "privacy": {
+      "title": "Privacy Policy",
+      "updated": "Last updated: July 2026",
+      "sections": [
+        { "h": "Information we collect", "p": "This site has no membership system and collects no personal data, except what you submit via a contact form (if any)." },
+        { "h": "Cookies", "p": "We only use cookies to remember your language preference and display settings; they are not used to track your identity." },
+        { "h": "Contact", "p": "If you have questions about your data, reach us through the channels listed on the homepage." }
+      ]
+    },
+    "terms": {
+      "title": "Terms of Service",
+      "updated": "Last updated: July 2026",
+      "sections": [
+        { "h": "Usage", "p": "All content is for educational purposes; sharing with credit is allowed, but resale is prohibited." },
+        { "h": "Limitation of liability", "p": "We are not liable for any accident or loss arising from the use of information on this site." }
+      ]
+    },
+    "cookies": {
+      "title": "Cookie Settings",
+      "updated": "Last updated: July 2026",
+      "intro": "We use cookies to remember your preferences and measure usage, in order to improve the site.",
+      "categories": [
+        { "h": "Necessary cookies", "status": "Always on", "p": "Required for the site to function, e.g. remembering your chosen language. Cannot be disabled.", "sub": "Language & display", "subStatus": "Automatic", "active": true },
+        { "h": "Analytics cookies", "status": "Optional", "p": "Help us understand how visitors use the site so we can improve content.", "sub": "Usage statistics", "subStatus": "Can be disabled", "active": false }
+      ],
+      "consent": "Clicking 'Save' means you accept the cookie use described above.",
+      "save": "Save settings",
+      "rejectAll": "Reject all"
+    }
+  }
+}
