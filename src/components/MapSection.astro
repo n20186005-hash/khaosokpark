@@ -8,6 +8,10 @@ interface Props {
 const { messages } = Astro.props;
 const map = messages.mapSection;
 const { lat, lng } = siteConfig.coords;
+
+// Google Maps embed: unified English UI for all languages
+const pbBase = '!1m18!1m12!1m3!1d3940.9395145303015!2d98.63818789999999!3d8.977713399999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3051287e3275975f%3A0x8e7f172ecc1fad30!2sKhao%20Sok%20National%20Park!5e0!3m2';
+const embedSrc = `https://www.google.com/maps/embed?pb=${pbBase}!5m2!1sen!2sus`;
 ---
 
 <section id="map" class="py-20 bg-ivory text-ink">
@@ -41,7 +45,7 @@ const { lat, lng } = siteConfig.coords;
       </div>
 
       <div class="rounded-2xl overflow-hidden border border-gold/30 h-[320px] md:h-auto">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.9395145303015!2d98.63818789999999!3d8.977713399999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3051287e3275975f%3A0x8e7f172ecc1fad30!2sKhao%20Sok%20National%20Park!5e0!3m2!1szh-CN!2sus!4v1784631038470!5m2!1szh-CN!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        <iframe src={embedSrc} width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
       </div>
     </div>
   </div>
