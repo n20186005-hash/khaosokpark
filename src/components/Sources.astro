@@ -6,6 +6,7 @@ interface Props {
 }
 const { messages } = Astro.props;
 const s = messages.sources;
+const mapsUrl = siteConfig.mapsUrl;
 ---
 
 <section id="sources" class="py-16 bg-teakDeep text-ivory">
@@ -26,11 +27,26 @@ const s = messages.sources;
             </li>
           ))}
         </ul>
+        <p class="mt-4 text-xs text-ivory/60 leading-relaxed">{s.imageNotice}</p>
       </div>
       <div>
         <h3 class="font-display text-xl text-goldBright">{s.factTitle}</h3>
         <p class="mt-3 text-sm text-ivory/80">{s.factText}</p>
       </div>
+    </div>
+
+    <!-- 评价来源（同步自 Google 地图用户评价）-->
+    <div class="mt-8 rounded-2xl border border-gold/20 bg-white/5 p-5">
+      <h3 class="font-display text-xl text-goldBright">{s.reviewTitle}</h3>
+      <p class="mt-2 text-sm text-ivory/80 leading-relaxed">{s.reviewText}</p>
+      <a
+        href={mapsUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-block mt-3 border border-gold/50 text-goldBright text-sm px-5 py-2 rounded-full hover:bg-gold hover:text-teak transition-colors"
+      >
+        {s.reviewLinkLabel} ↗
+      </a>
     </div>
 
     <div class="mt-8 rounded-2xl border border-gold/30 bg-white/5 p-5">

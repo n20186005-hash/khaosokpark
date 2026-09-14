@@ -1,17 +1,23 @@
 {
   "meta": {
-    "title": "Khao Sok National Park — Guide to Thailand's Ancient Rainforest & Cheow Lan Lake",
-    "description": "A complete visitor guide to Khao Sok National Park in Surat Thani — one of the world's oldest rainforests, the emerald Cheow Lan Lake, wildlife, history, fees and real traveler reviews."
+    "title": "Khao Sok National Park 2026: Cheow Lan Lake, Entrance Fee, Map",
+    "description": "Independent guide to Khao Sok National Park, Thailand: Cheow Lan Lake raft houses, entrance fees (200–300 THB for foreign visitors), opening hours, location map, and how to get there from Phuket, Krabi and Surat Thani."
   },
   "header": {
     "home": "Home",
     "about": "About",
     "history": "History",
     "guide": "Guide",
+    "weather": "Weather",
     "food": "Food",
     "gallery": "Gallery",
     "reviews": "Reviews",
     "map": "Map"
+  },
+  "cta": {
+    "label": "Quick actions",
+    "call": "Call the park",
+    "directions": "Directions"
   },
   "hero": {
     "eyebrow": "National Park · Surat Thani, Southern Thailand",
@@ -19,8 +25,12 @@
     "titleAccent": " National Park",
     "subtitle": "One of the world's oldest rainforests and the wild heart of Southern Thailand — towering limestone karsts, the emerald Cheow Lan Lake and rare wildlife around every corner.",
     "rating": "4.7",
-    "reviews": "8,791",
-    "reviewCount": "8,791",
+    "reviews": "8,924",
+    "reviewCount": "8,924",
+    "reviewsFromGoogle": "Reviews sourced from Google Maps user reviews",
+    "viewAllReviews": "See all reviews on Google Maps",
+    "ratingSourceNote": "Rating and review count synced from Google Maps user reviews · September 2026 · See all reviews on Google Maps↗",
+    "imageAlt": "Khao Sok National Park — main view in Ban Ta Khun, Thailand",
     "category": "National Park",
     "badge": "Surat Thani · Southern Thailand",
     "cta1": "Get Directions",
@@ -54,6 +64,7 @@
   "about": {
     "label": "About",
     "heading": "Khao Sok National Park — Southern Thailand's Wild Heart",
+    "entityIntro": "Welcome to Khao Sok National Park — widely known simply as Khao Sok. Located in Ban Ta Khun, Surat Thani, Thailand, this destination serves as a primary hub for travellers visiting the region.",
     "lead": "A 739 km² sanctuary of primeval rainforest, hidden lakes and some of Southeast Asia's richest wildlife",
     "paragraph1": "Khao Sok National Park covers about 739 km² in Surat Thani Province, Southern Thailand. Established in 1980 as the country's 22nd national park, it protects one of the oldest rainforests on Earth — its ecosystem is estimated to be around 160 million years old, far older than the Amazon.",
     "paragraph2": "At its centre lies Cheow Lan Lake (ทะเลสาบเชี้ยวหลาน), a vast emerald reservoir created in the early 1980s when the Ratchaprapha Dam flooded a hidden valley. Today the lake's limestone karsts rise straight from the water, sheltering gibbons, hornbills and — with luck — wild elephants.",
@@ -124,7 +135,7 @@
   },
   "history": {
     "label": "History",
-    "heading": "The Story of Khao Sok",
+    "heading": "History & Significance of Khao Sok National Park",
     "intro": "From ancient rainforest to modern national park — and a lost valley now beneath the lake",
     "blocks": [
       { "title": "250 Million Years Ago — An Ancient Ocean Reef", "text": "The steep karst limestone peaks of Khao Sok are not ordinary mountains — they were once a vast coral reef in the Permian ocean 250 million years ago. Tectonic uplift raised them, and millions of years of rain carved them into the 'underwater Ha Long Bay' we see today." },
@@ -157,19 +168,25 @@
     "hours": {
       "tag": "Opening Hours",
       "title": "Opening Hours",
-      "time": "08:00 – 17:00",
+      "time": "06:00 – 18:00",
       "items": [
-        { "label": "Daily (Mon–Sun)", "value": "08:00–17:00" }
+        { "label": "Park open, daily (Mon–Sun)", "value": "06:00–18:00" },
+        { "label": "Visitor centre / ticket window", "value": "about 08:00–16:30" },
+        { "label": "Boats on Cheow Lan Lake", "value": "No sailings before sunrise or after sunset" },
+        { "label": "Night activities", "value": "HQ zone only, with a guide" },
+        { "label": "Staying overnight", "value": "Designated lodges and camping only" }
       ]
     },
     "fees": {
       "tag": "Entrance Fee",
       "title": "National Park Entrance Fee",
       "items": [
-        { "title": "Foreigners (adult)", "desc": "300 THB" },
-        { "title": "Foreigners (child)", "desc": "150 THB" },
-        { "title": "Thai nationals (adult/child)", "desc": "50 / 20 THB" }
-      ]
+        { "title": "Foreign visitors — lake zone (Ratchaprapha Dam)", "desc": "Adult 300 THB / child 150 THB — the rate most lake visitors pay" },
+        { "title": "Foreign visitors — park standard (DNP rate group 2)", "desc": "Adult 200 THB / child 100 THB" },
+        { "title": "Thai nationals", "desc": "Adult 40 THB / child 20 THB" },
+        { "title": "Child rate applies to", "desc": "Ages 3–14, or height up to 140 cm" }
+      ],
+      "note": "Fees are set by the Department of National Parks (DNP) and paid in cash at the checkpoint. Khao Sok is in DNP rate group 2; the Ratchaprapha Dam / Cheow Lan Lake zone has been designated a special-fee area since 1 May 2024. If prices change, the on-site notice at the checkpoint prevails."
     },
     "transport": {
       "tag": "Getting There",
@@ -239,7 +256,8 @@
       ]
     },
     "nearby": {
-      "title": "Nearby Attractions",
+      "title": "Landmarks & Attractions Around Khao Sok",
+      "lead": "When visiting Khao Sok National Park, visitors can easily explore surrounding landmarks and points of interest, including Cheow Lan Lake and Ratchaprapha Dam.",
       "cta": "Learn more",
       "items": [
         { "name": "Cheow Lan Lake", "desc": "The emerald reservoir of limestone karsts and floating raft houses — Khao Sok's signature sight.", "url": "https://portal.dnp.go.th/Content/nationalpark?contentId=35043" },
@@ -252,8 +270,11 @@
       { "q": "When is the best time to visit Khao Sok?", "a": "December to April is driest and most comfortable; May to November is lush and wildlife-rich but wet. The lake is beautiful year-round." },
       { "q": "Do I need a guide for trekking?", "a": "Short trails are self-guided, but jungle treks, caves and Rafflesia spotting require a certified guide, arranged at the park HQ." },
       { "q": "Can I stay on Cheow Lan Lake?", "a": "Yes — floating raft-house lodges offer overnight stays with meals; most packages include boat transfer from the dam." },
-      { "q": "Is there an entrance fee?", "a": "Yes — the park entrance fee applies (foreigners 300/150 THB, Thais 50/20 THB); lake boat tours are priced separately." },
-      { "q": "How do I get there from the coast?", "a": "Phuket and Krabi are about 2.5–3 hours away by road; many visitors combine Khao Sok with an Andaman beach trip." }
+      { "q": "Is there an entrance fee?", "a": "Yes. Foreign visitors pay 200 THB (adult) / 100 THB (child) under DNP rate group 2, and the Ratchaprapha Dam / Cheow Lan Lake zone is a designated special-fee area at 300 THB (adult) / 150 THB (child) — the amount most lake visitors pay. Thai nationals pay 40/20 THB. Lake boats and raft houses are priced separately. If prices change, the on-site notice prevails." },
+      { "q": "How do I get there from the coast?", "a": "Phuket and Krabi are about 2.5–3 hours away by road; many visitors combine Khao Sok with an Andaman beach trip." },
+      { "q": "Where is Khao Sok National Park located?", "a": "Khao Sok National Park is located in Khao Phang, Ban Ta Khun District, Surat Thani Province, Thailand (Plus code XJHQ+37), about 110–120 km west of Surat Thani city." },
+      { "q": "Is Khao Sok National Park free to visit?", "a": "No. Foreign visitors pay 200 THB (adult) / 100 THB (child) at the park standard rate, or 300/150 THB in the Ratchaprapha Dam / Cheow Lan Lake special-fee zone. Thai nationals pay 40/20 THB. The park is open daily from 06:00 to 18:00; Cheow Lan Lake boat tours are priced separately. If prices change, the on-site notice prevails." },
+      { "q": "Can I visit Khao Sok National Park as a day trip?", "a": "Yes — a day trip is possible from Surat Thani, Phuket, Krabi or Khao Lak, but staying one night in a Cheow Lan Lake raft house is what most visitors remember most." }
     ]
   },
   "food": {
@@ -267,6 +288,7 @@
       { "tag": "Drink", "name": "Fresh coconut", "price": "40 THB", "desc": "Chilled young coconut — the perfect trail refresher" },
       { "tag": "Fruit", "name": "Seasonal tropical fruit", "price": "seasonal", "desc": "Rambutan, mangosteen and durian in season from local orchards" }
     ],
+    "note": "Menu prices are indicative; if prices change, the price posted on site prevails.",
     "quote": {
       "text": "Breakfast on a raft house, watching mist lift off the karsts — that's Khao Sok.",
       "author": "— A lake overnight guest"
@@ -278,7 +300,7 @@
     "intro": "Limestone karsts, the emerald lake, deep rainforest and the wildlife that calls it home",
     "alts": [
       "Khao Sok National Park welcome sign",
-      "Cheow Lan Lake and limestone karsts",
+      "Cheow Lan Lake and limestone karsts near Khao Sok National Park",
       "Emerald water reflecting the cliffs",
       "Limestone mountains rising from the lake",
       "Jungle trek through ancient rainforest",
@@ -293,7 +315,7 @@
       "Hornbill perched on a branch",
       "Stream through the forest",
       "Wooden walkway in the jungle",
-      "Ratchaprapha Dam viewpoint",
+      "Ratchaprapha Dam viewpoint near Khao Sok National Park",
       "Sunset over Cheow Lan Lake",
       "Lotus and lilies on the water",
       "Canopy of the ancient forest",
@@ -309,7 +331,10 @@
     "label": "Reviews",
     "heading": "What Visitors Say",
     "intro": "A summary of traveller feedback on Google Maps to help you plan",
-    "disclaimer": "Summarised from public Google Maps reviews; not the site's own opinion",
+    "ratingNote": "4.7 / 5 · 8,924 Google reviews · synced September 2026",
+    "ratingSource": "Rating and review count are quoted from user reviews on the Google Maps listing for Khao Sok National Park (synced September 2026). This site is not the publisher of these reviews; the rating is shown for reference only.",
+    "ratingSourceLabel": "View the original reviews on Google Maps",
+    "disclaimer": "Reviews are synced from Google Maps user reviews, synced September 2026; copyright belongs to the original authors and Google Maps.",
     "declaration": "As a non-profit educational site, we present both highlights and cautions honestly",
     "featured": [
       { "text": "The lake at sunrise is unreal — mist, karsts and total silence. A highlight of our Thailand trip.", "source": "— Summarised from Google Maps" },
@@ -325,11 +350,11 @@
       { "text": "Family trip — kids loved the canoe and the cave. Easy enough near the HQ.", "rating": 5, "name": "Jira W.", "date": "Sep 2025" },
       { "text": "Busy at holidays; arrive early for parking and calmer water.", "rating": 4, "name": "Witthaya T.", "date": "Aug 2025" }
     ],
-    "viewLocation": "View on Google Maps"
+    "viewLocation": "See all reviews on Google Maps"
   },
   "mapSection": {
     "label": "Location",
-    "heading": "How to Find Khao Sok",
+    "heading": "Location & How to Visit Khao Sok in Ban Ta Khun",
     "lead": "In Surat Thani Province, Southern Thailand — the park HQ lies about 110–120 km west (south-west) of Surat Thani city, while the Cheow Lan Lake pier (Ban Ta Khun) is about 60–65 km west of the city; the two zones are ~50 km apart.",
     "stats": [
       { "tag": "Province", "value": "Surat Thani", "sub": "Thailand" },
@@ -338,7 +363,134 @@
     ],
     "address": "Park HQ / Visitor Centre: Khao Sok, Phanom District, Surat Thani 84250; Cheow Lan Lake pier / Ratchaprapha Dam: Khao Phang, Ban Ta Khun District 84230 (the two zones are ~50 km apart — don't navigate to the wrong one).",
     "plusCode": "XJHQ+37",
-    "coords": "8.9333° N, 98.5167° E"
+    "coords": "8.9333° N, 98.5167° E",
+    "officialNote": "For official updates and regional tourism information, visit"
+  },
+  "weather": {
+    "label": "Live weather",
+    "heading": "Weather & what to do about it",
+    "lead": "Built from live conditions at Khao Sok, we skip the numbers and tell you what to wear, what to do today and what to pack.",
+    "loading": "Loading live weather…",
+    "unavailable": "Weather data is temporarily unavailable — please double-check before you set off.",
+    "updatedPrefix": "Updated",
+    "nowTitle": "Right now",
+    "feels": "Feels like",
+    "humidity": "Humidity",
+    "wind": "Wind",
+    "rainChance": "Rain chance",
+    "uv": "UV",
+    "uvLevels": { "low": "Low", "moderate": "Moderate", "high": "High", "veryHigh": "Very high", "extreme": "Extreme" },
+    "beaufort": "",
+    "mtnTitle": "Ridge reference (~800 m)",
+    "mtnTemp": "~{t}°C up on the ridge",
+    "mtnDiff": "about {d}°C cooler than the lake",
+    "alertTitle": "Weather alerts & safety risks",
+    "alertNone": "No weather warnings — plans can go ahead as usual",
+    "alertNote": "Risks are derived automatically from live data for planning only. For official warnings, follow the Thai Meteorological Department (TMD).",
+    "adviceTitle": "Today's advice",
+    "groups": { "outfit": "What to wear", "plan": "How to plan", "pack": "What to pack" },
+    "groupEmpty": {
+      "outfit": "Rainforest basics: light, breathable layers plus a thin jacket",
+      "plan": "Regular plans are fine — forest trails stay slippery",
+      "pack": "Drinking water, insect repellent, rain gear"
+    },
+    "sceneTitle": "Where you're going",
+    "sceneNote": "Khao Sok is mostly lake, limestone ridge and rainforest trail — here's how each is affected today.",
+    "scenes": {
+      "lake": {
+        "name": "Cheow Lan Lake · boats & raft houses",
+        "ok": "Calm water — great for long-tail boat trips and a night on a raft house.",
+        "caution": "Boat departures may be delayed or cancelled; confirm with your operator first.",
+        "stop": "Skip the lake today — long-tail boats are likely suspended."
+      },
+      "hike": {
+        "name": "Limestone ridge · viewpoints",
+        "ok": "Clear views — a good day to climb for the mist and the panorama.",
+        "caution": "Windy and slippery rock up top; take extra care and add a layer.",
+        "stop": "High risk of lightning and flash flooding — stay off the summit and out of gorges."
+      },
+      "forest": {
+        "name": "Rainforest trail · waterfalls",
+        "ok": "Cool shade — ideal for trails, birdwatching and hunting for Rafflesia.",
+        "caution": "Slippery trail with active leeches and mosquitoes; wear long trousers and socks.",
+        "stop": "Streams rise fast in heavy rain — stay out of the waterfall and valley trails."
+      }
+    },
+    "forecastTitle": "Next 7 days",
+    "today": "Today",
+    "rainShort": "Rain",
+    "source": "Data: Open-Meteo free public API · Coordinates 8.9333, 98.5167",
+    "advice": {
+      "rain60": {
+        "outfit": "Rain is likely — bring rain gear and wear quick-dry clothing.",
+        "plan": "Prioritise indoor or sheltered plans; postpone forest hikes and lake cruises.",
+        "pack": "Umbrella / rain jacket"
+      },
+      "drizzle": {
+        "outfit": "Light rain — surfaces are slick, so watch your footing.",
+        "plan": "Outdoor activities will be less enjoyable; slow down on boardwalks and steps.",
+        "pack": "Folding umbrella, grippy shoes"
+      },
+      "rainHeavy": {
+        "risk": "Heavy rainfall — avoid valleys, low ground and fast-rising streams.",
+        "outfit": "Wear a waterproof shell; skip cotton that soaks and clings.",
+        "plan": "Not a day for outdoor activities — boats and cable cars may be suspended; switch to indoor or vehicle-based plans.",
+        "pack": "Rain poncho (no long umbrellas in wind), dry bag"
+      },
+      "thunder": {
+        "risk": "Lightning risk — never swim on the lake, stand on summits or shelter under trees.",
+        "outfit": "Take a waterproof shell and leave metal jewellery behind.",
+        "plan": "Water activities and cave tours are likely closed; move to indoor activities.",
+        "pack": "Rain poncho, dry bag"
+      },
+      "wind56": {
+        "plan": "Lake cruises and some open-air activities may be suspended.",
+        "pack": "Windproof jacket; hats will fly off, and loose long dresses are a bad idea."
+      },
+      "wind7": {
+        "risk": "Strong wind — keep away from billboards, shoreline rocks and dead trees.",
+        "plan": "Outdoor and lake activities will most likely be closed; rescheduling is safer.",
+        "pack": "Windproof jacket"
+      },
+      "hot": {
+        "outfit": "Hot — avoid heading out at midday and choose light, breathable clothing.",
+        "plan": "Shorten outdoor time and move hiking to early morning or late afternoon.",
+        "pack": "Sunscreen, plenty of water, heat relief basics"
+      },
+      "uv": {
+        "plan": "Stay in the shade or indoors around midday rather than lingering in the sun.",
+        "pack": "Sunscreen, sunglasses, sun hat"
+      },
+      "uvExtreme": {
+        "risk": "Extreme UV — exposed skin can burn within 20 minutes.",
+        "plan": "Avoid long exposure between 11:00 and 15:00."
+      },
+      "tempDiff": { "outfit": "Big day–night temperature swing — pack a jacket you can add or remove." },
+      "cold": { "outfit": "Chilly — dress warmly and keep your core covered.", "pack": "Thick jacket, scarf" },
+      "humid": {
+        "outfit": "Hot and humid — quick-dry, breathable fabrics feel far better.",
+        "plan": "",
+        "pack": "Electrolyte drinks, insect repellent"
+      },
+      "sunny": { "plan": "Clear skies — excellent for outdoor exploring and for sunrise or sunset views." },
+      "cloudy": { "plan": "Soft, even light — great for photos and for spending hours outdoors." },
+      "fog": {
+        "risk": "Low visibility — lake boats and flights are prone to delays.",
+        "plan": "Not a day for mountain or lake views; keep your schedule flexible.",
+        "pack": "Face mask"
+      },
+      "wetTrail": {
+        "plan": "After rain the trail is slick and leeches are active — long trousers, long socks, slow steps.",
+        "pack": "Insect repellent, long socks, grippy hiking shoes"
+      }
+    },
+    "codes": {
+      "0": "Clear", "1": "Mostly clear", "2": "Partly cloudy", "3": "Overcast",
+      "45": "Fog", "48": "Freezing fog", "51": "Light drizzle", "53": "Drizzle", "55": "Heavy drizzle",
+      "61": "Light rain", "63": "Rain", "65": "Heavy rain",
+      "80": "Rain showers", "81": "Heavy showers", "82": "Violent showers",
+      "95": "Thunderstorm", "96": "Thunderstorm with hail", "99": "Severe thunderstorm", "other": "Cloudy with rain"
+    }
   },
   "footer": {
     "brand": {
@@ -368,6 +520,7 @@
     "disclaimerLead": "This site is not affiliated with any government body or the park's operator",
     "unofficial": "An independent resource maintained by volunteers",
     "dataSource": "Weather: Open-Meteo · Coordinates: 8.9333, 98.5167",
+    "imageRights": "Image rights: all images displayed on this site remain the property and copyright of their original photographers.",
     "copyright": "© 2026 Khao Sok National Park Info Station. All rights reserved."
   },
   "sources": {
@@ -385,6 +538,10 @@
     "correctionText": "We strive for accuracy, but entrance fees and opening hours may change. If you spot any error, email us so we can fix it for every traveller.",
     "correctionCta": "Email a correction",
     "correctionMailto": "mailto:n20186005@gmail.com?subject=Khao%20Sok%20National%20Park%20correction",
+    "reviewTitle": "Reviews",
+    "reviewText": "Reviews · synced September 2026 — sourced from Google Maps user reviews; copyright belongs to the original authors and Google Maps.",
+    "reviewLinkLabel": "See all reviews on Google Maps",
+    "imageNotice": "Image rights: all images displayed on this site remain the property and copyright of their original photographers.",
     "copyright": "Khao Sok National Park Info Station"
   },
   "legal": {
@@ -416,6 +573,297 @@
       "consent": "Clicking 'Save' means you accept the cookie use described above.",
       "save": "Save settings",
       "rejectAll": "Reject all"
+    }
+  },
+  "pages": {
+    "lake": {
+      "meta": {
+        "title": "Cheow Lan Lake (Khao Sok): Boat Trips, Raft Houses & Fees",
+        "description": "Cheow Lan Lake in Khao Sok National Park: how to reach the Ratchaprapha Dam pier, long-tail boat times, floating raft-house stays, entrance fees, swimming safety and the best season."
+      },
+      "breadcrumb": "Cheow Lan Lake",
+      "eyebrow": "Cheow Lan Lake",
+      "heading": "Cheow Lan Lake: Raft Houses, Boat Trips and What to Expect",
+      "lead": "The emerald reservoir at the heart of Khao Sok National Park — reached only by boat from the Ratchaprapha Dam, and home to the floating raft-house lodges and the limestone karsts that appear in almost every photo of the park.",
+      "factsTitle": "Cheow Lan Lake at a glance",
+      "facts": [
+        { "label": "Also spelled", "value": "Cheow Lan · Chiew Larn · เชี้ยวหลาน" },
+        { "label": "Created by", "value": "Ratchaprapha Dam (1980s)" },
+        { "label": "Surface area", "value": "about 165 km²" },
+        { "label": "District", "value": "Ban Ta Khun, Surat Thani" },
+        { "label": "Boat access", "value": "Ratchaprapha Dam pier, about 1 h by long-tail boat" },
+        { "label": "From the park HQ", "value": "about 50 km, roughly 1 h by road" },
+        { "label": "Staying over", "value": "Floating raft houses, sold per person" },
+        { "label": "Boat hours", "value": "Daylight only — no sailings before sunrise or after sunset" }
+      ],
+      "tableTitle": "Getting to the lake",
+      "tableHead": ["Starting point", "Drive time", "Best option"],
+      "tableRows": [
+        ["Surat Thani city / Phun Phin railway station", "1–1.5 h (60–65 km)", "Minivan, bus or taxi"],
+        ["Surat Thani Airport (URT)", "about 1.5 h (about 70 km)", "Pre-booked van or taxi"],
+        ["Khao Sok park HQ (Phanom)", "about 1 h (about 50 km)", "Tour transfer or taxi"],
+        ["Phuket / Krabi / Khao Lak", "2–3 h", "Shared minivan or tour pickup"],
+        ["Bangkok", "Fly about 1 h to URT, or overnight train", "Flight to URT, or sleeper train plus road transfer"]
+      ],
+      "sections": [
+        {
+          "h": "Where the lake is — and why it is not the park entrance",
+          "p": "Khao Sok National Park has two visitor zones about 50 km apart. The main park HQ in Phanom District (postcode 84250) is the land-based rainforest entrance, while Cheow Lan Lake lies in Ban Ta Khun District (postcode 84230) and is reached by boat from the Ratchaprapha Dam. Driving to the wrong one is the most common mistake visitors make.",
+          "list": [
+            "Park HQ — jungle trails, waterfalls, Rafflesia spotting, tree-house lodges",
+            "Cheow Lan Lake — long-tail boats, limestone karsts, cave visits, floating raft houses",
+            "Both zones charge the national park entrance fee"
+          ]
+        },
+        {
+          "h": "Day trip or overnight on a raft house?",
+          "p": "A day trip is possible, but the boat ride from the dam pier to the main raft-house area takes about an hour each way, so a large part of the day is spent travelling. Staying one night is what most visitors remember: mist on still water at dawn and the lake to yourself before the day-trippers arrive.",
+          "list": [
+            "Day trip — boat cruise, a viewpoint stop and lunch, back at the pier by late afternoon",
+            "One night — raft house with meals, sunrise on the water and night jungle sounds",
+            "Two nights — adds kayaking, a jungle trek and a cave or waterfall stop"
+          ]
+        },
+        {
+          "h": "Raft houses, boats and bookings",
+          "p": "Floating raft houses are operated by companies licensed for the lake and are sold as packages rather than as plain rooms. A typical package includes the boat transfer from the dam, meals, life jackets and a local guide; rates vary with the season and the standard of the raft, so confirm exactly what is included with your operator before paying.",
+          "list": [
+            "Book well ahead in the dry season (Dec–Apr) and on Thai holiday weekends",
+            "Bring cash — card payment is rare on the lake",
+            "Power is usually generator-limited, so charging points and hot water may be restricted",
+            "Mobile signal becomes patchy once the boat leaves the pier"
+          ]
+        },
+        {
+          "h": "Fees at a glance",
+          "p": "The national park entrance fee is charged separately from the boat and raft-house package. The lake zone at Ratchaprapha Dam is a designated special-fee area, so foreign visitors pay 300 THB for adults and 150 THB for children; the park standard rate (DNP group 2) is 200 THB and 100 THB. Thai nationals pay 40 THB and 20 THB. Boat and raft-house prices are quoted per package, not per park ticket. If prices change, the on-site notice prevails."
+        },
+        {
+          "h": "Swimming, boats and safety",
+          "p": "Life jackets are mandatory on long-tail boats, and lake weather can turn quickly in the afternoon. Swim only from the raft house where staff can watch the water, keep children within reach, and stay out of the water during and after heavy rain.",
+          "list": [
+            "Wear the life jacket for the whole crossing",
+            "Do not swim far from the raft house — the reservoir is deep and drops away quickly",
+            "Cave visits such as Nam Talu run in the dry season only and must be guided; they are closed when flash-flood risk is high",
+            "There is no night boating and no night activity on the lake — keep transfers, swims and viewpoint stops inside daylight"
+          ]
+        },
+        {
+          "h": "Best season for the lake",
+          "p": "The lake is scenic all year, but the experience differs sharply. December to April brings calmer water, clearer trails and the best chance of the mirrored-karst photographs. May to November is the green season: the reservoir fills, the waterfalls run hard and the forest is at its lushest, but boat departures can be delayed and trails flood.",
+          "list": [
+            "Dawn (roughly 06:30–08:30) is the golden window for mist and glassy water",
+            "Afternoon storms are common from May to November — plan boat transfers for the morning",
+            "Overnight stays sell out well in advance in the dry season"
+          ]
+        }
+      ],
+      "faqTitle": "Cheow Lan Lake: frequently asked questions",
+      "faqs": [
+        { "q": "Can I get to Cheow Lan Lake without a tour?", "a": "Yes — drive to the Ratchaprapha Dam pier and hire a long-tail boat there, or book a raft house that includes the transfer. In practice most visitors book a package, because boats are shared and there is no reliable walk-up ticket window at the pier." },
+        { "q": "How long is the boat ride to the raft houses?", "a": "About one hour by long-tail boat from the Ratchaprapha Dam pier to the main raft-house area, depending on which raft house you are booked into." },
+        { "q": "Can you swim in Cheow Lan Lake?", "a": "Yes, from the raft houses, normally with a life jacket and only close to the raft. Avoid the water during and after heavy rain, when the reservoir level and currents change quickly." },
+        { "q": "How much does a raft house cost?", "a": "Raft houses are sold as per-person packages that usually include the boat transfer, meals and a guide; rates vary by season and by the standard of the raft. Confirm exactly what is included with your operator before booking." },
+        { "q": "Is Cheow Lan Lake the same as Khao Sok National Park?", "a": "The lake is inside Khao Sok National Park but it is a separate zone: the lake and its pier are in Ban Ta Khun District, about 50 km from the main park HQ and the jungle trails." },
+        { "q": "When is the best time to visit Cheow Lan Lake?", "a": "December to April for calm water and clear trails; May to November for a fuller lake and the lushest forest, though afternoon storms can delay boat trips. Dawn is the best hour in any month." }
+      ],
+      "note": "Opening hours, entrance fees and boat operations can change — confirm with the national park or your operator before travelling.",
+      "relatedTitle": "Plan the rest of your trip",
+      "backHome": "Back to the full Khao Sok guide"
+    },
+    "transport": {
+      "meta": {
+        "title": "Getting to Khao Sok National Park: Airports, Trains & Minivans",
+        "description": "How to get to Khao Sok National Park from Surat Thani, Phuket, Krabi, Khao Lak and Bangkok — airport transfers, overnight train, minivans, drive times and the park HQ versus lake pier mix-up to avoid."
+      },
+      "breadcrumb": "Getting There",
+      "eyebrow": "Getting There",
+      "heading": "Getting to Khao Sok: Airports, Trains, Minivans",
+      "lead": "Khao Sok sits in Surat Thani Province, roughly halfway between the Gulf coast and the Andaman coast, so almost every route starts with one decision: are you heading to the park HQ for the jungle trails, or to the Ratchaprapha Dam pier for Cheow Lan Lake? The two are about 50 km apart.",
+      "factsTitle": "Khao Sok access at a glance",
+      "facts": [
+        { "label": "Nearest airport", "value": "Surat Thani (URT), about 70 km" },
+        { "label": "Also used", "value": "Phuket (HKT) · Krabi (KBV), 2.5–3 h" },
+        { "label": "Nearest railway", "value": "Phun Phin / Surat Thani, Southern Line" },
+        { "label": "From Surat Thani city", "value": "HQ 110–120 km · lake pier 60–65 km" },
+        { "label": "Between the two zones", "value": "about 50 km" },
+        { "label": "Without a car", "value": "Minivan, shared transfer or tour pickup" }
+      ],
+      "tableTitle": "Drive times to Khao Sok",
+      "tableHead": ["From", "To park HQ", "To lake pier", "Best option"],
+      "tableRows": [
+        ["Surat Thani city / railway station", "1.5–2 h (110–120 km)", "1–1.5 h (60–65 km)", "Minivan, bus or taxi"],
+        ["Surat Thani Airport (URT)", "about 1.5 h (about 70 km)", "about 1.5–2 h", "Taxi or pre-booked van"],
+        ["Phuket", "about 3 h", "about 2.5–3 h", "Shared minivan or tour"],
+        ["Krabi", "about 2.5 h", "about 2–2.5 h", "Shared minivan"],
+        ["Khao Lak", "about 2 h", "about 2 h", "Minivan"],
+        ["Bangkok", "Overnight train to Phun Phin, then about 2 h", "Fly to URT, or train plus transfer", "Sleeper train or flight"]
+      ],
+      "sections": [
+        {
+          "h": "First: which zone are you going to?",
+          "p": "Visitors regularly arrive at the wrong entrance. The park HQ in Phanom District (postcode 84250) is the land-based rainforest entrance with the trails, waterfalls and jungle lodges. Cheow Lan Lake is in Ban Ta Khun District (postcode 84230) and is reached by boat from the Ratchaprapha Dam. Check which one your hotel, tour or raft-house booking is in before you set off.",
+          "list": [
+            "Park HQ — Khao Sok village area, Phanom District, 84250",
+            "Cheow Lan Lake — Ratchaprapha Dam pier, Ban Ta Khun District, 84230",
+            "Plus code for the mapped park entrance: XJHQ+37"
+          ]
+        },
+        {
+          "h": "By air",
+          "p": "Surat Thani Airport (URT) is the closest airport, about 70 km from the park. Phuket (HKT) and Krabi (KBV) are 2.5–3 hours away by road and are often cheaper for international flights, which is why many travellers combine Khao Sok with an Andaman coast trip.",
+          "list": [
+            "URT — about 1.5 h by taxi or pre-booked van; some minivans call at the airport",
+            "HKT — about 2.5–3 h; shared minivans and private transfers",
+            "KBV — about 2.5–3 h; the usual choice for travellers based in Krabi"
+          ]
+        },
+        {
+          "h": "By train",
+          "p": "The Southern Line runs from Bangkok to Phun Phin in Surat Thani. An overnight sleeper from Bangkok arrives in the morning, and the onward road transfer takes roughly 1.5–2 hours to the park HQ. It is a comfortable option for long-haul travellers who would rather not take another domestic flight.",
+          "list": [
+            "Bangkok (Krung Thep Aphiwat) to Surat Thani / Phun Phin — overnight sleeper",
+            "Phun Phin to the park — about 1.5–2 h by minivan, bus or taxi",
+            "Book sleeper berths in advance, especially from November to February"
+          ]
+        },
+        {
+          "h": "By minivan, bus or private transfer",
+          "p": "Minivans and buses from Surat Thani city, Surat Thani Airport, Phuket, Krabi and Khao Lak are the standard way to arrive. Services cluster in the morning, some drop you at your accommodation, and most operators collect guests from the village for a tour or lake transfer.",
+          "list": [
+            "Cheapest — local bus or minivan with a change in Surat Thani",
+            "Most convenient — private transfer or a van arranged by your hotel",
+            "Easiest for the lake — a package that collects you and includes the boat"
+          ]
+        },
+        {
+          "h": "Driving and navigation",
+          "p": "If you drive yourself, note that a search for Khao Sok National Park often points to the mapped park entrance rather than the lake pier. Set your destination by district — Phanom for the park HQ, Ban Ta Khun for the dam pier — or use the Plus code, and refuel before leaving town, as petrol stations thin out west of Surat Thani."
+        },
+        {
+          "h": "Arriving, fees and onward travel",
+          "p": "The national park entrance fee is paid in cash at the checkpoint: foreign visitors 200/100 THB at the park standard rate, or 300/150 THB in the Ratchaprapha Dam / Cheow Lan Lake special-fee zone; Thai nationals 40/20 THB. Park hours are 06:00–18:00 and overnight stays are only permitted in designated lodges, raft houses or the campsite, so plan to arrive in daylight. From Khao Sok it is straightforward to continue to Khao Lak, Phuket, Krabi or the Gulf islands via Surat Thani and Donsak pier. If prices change, the on-site notice prevails.",
+          "list": [
+            "Bring cash for the park fee",
+            "Arrive before dark — roads are unlit and wildlife crosses at dusk",
+            "Lake tours normally leave from the dam pier in the morning"
+          ]
+        }
+      ],
+      "faqTitle": "Getting to Khao Sok: frequently asked questions",
+      "faqs": [
+        { "q": "What is the nearest airport to Khao Sok National Park?", "a": "Surat Thani Airport (URT), about 70 km and roughly 1.5 hours away by road. Phuket (HKT) and Krabi (KBV) are also used commonly, at about 2.5–3 hours." },
+        { "q": "Is there a train station near Khao Sok?", "a": "The nearest station is Phun Phin in Surat Thani, on the Southern Line, roughly 1.5–2 hours from the park by road. Overnight sleepers from Bangkok arrive there in the morning." },
+        { "q": "Do I need to rent a car?", "a": "No. Minivans, buses, private transfers and tour pickups cover all the usual routes, and most lake packages include both the road transfer and the boat." },
+        { "q": "How far is Cheow Lan Lake from the park headquarters?", "a": "About 50 km, roughly an hour by road, and the two are in different districts. Check which one your booking refers to before you travel." },
+        { "q": "Can I visit Khao Sok as a day trip from Phuket or Krabi?", "a": "Yes, but it is a long day: 2.5–3 hours each way plus travel inside the park. Staying one night, ideally on a Cheow Lan Lake raft house, makes much better use of the trip." },
+        { "q": "What time does Khao Sok National Park open?", "a": "The park is open daily from 06:00 to 18:00, with the entrance fee paid at the checkpoint. Day visitors are expected to leave by closing time and overnight stays are only allowed in designated lodges, raft houses or the campsite. Boats on Cheow Lan Lake may not sail before sunrise or after sunset, so lake transfers happen in daylight." }
+      ],
+      "note": "Road times are estimates for normal traffic. During Thai public holidays and the December–April peak season, allow extra time and book transfers in advance.",
+      "relatedTitle": "Plan the rest of your trip",
+      "backHome": "Back to the full Khao Sok guide"
+    },
+    "trips": {
+      "meta": {
+        "title": "Khao Sok from Phuket & Krabi: Day Trip or Two Days?",
+        "description": "How to plan Khao Sok National Park from Phuket or Krabi — realistic drive times, what a day trip can and cannot include, two-day and overnight structures, timing rules (park open 06:00–18:00, no lake boats after sunset) and how to avoid the park HQ versus lake pier mix-up."
+      },
+      "breadcrumb": "From Phuket & Krabi",
+      "eyebrow": "Route planning",
+      "heading": "Khao Sok from Phuket or Krabi: Day Trip or Overnight?",
+      "lead": "On a map the Andaman coast looks close enough for an easy day trip — and the real distance is just far enough that one day covers only one of the park's two zones. This is planning information only: no operator recommendations, no booking links.",
+      "factsTitle": "The short answer",
+      "facts": [
+        { "label": "Phuket to park HQ", "value": "2.5–3 h each way" },
+        { "label": "Krabi to park HQ", "value": "about 2.5 h each way" },
+        { "label": "Phuket / Krabi to lake pier", "value": "2.5–3 h each way (Ratchaprapha Dam)" },
+        { "label": "Day trip works for", "value": "park HQ trails and viewpoints" },
+        { "label": "Day trip into the lake", "value": "Not advisable — the pier is another hour by boat each way" },
+        { "label": "Realistic minimum", "value": "One night, at the HQ village or on a raft house" }
+      ],
+      "tableTitle": "Time budget from the coast",
+      "tableHead": ["Route", "One way", "What it buys you"],
+      "tableRows": [
+        ["Phuket to park HQ (Phanom)", "2.5–3 h", "A full day of trails; leave the coast around 06:00–06:30"],
+        ["Krabi to park HQ", "about 2.5 h", "The same day-trip structure, with a slightly shorter drive"],
+        ["Phuket / Krabi to lake pier", "2.5–3 h", "Only if you accept about 6–7 h of driving plus about 2 h of boating"],
+        ["Park HQ to lake pier", "about 1 h (50 km)", "Useful when you want to cover both zones"],
+        ["Lake pier to main raft-house area", "about 1 h by long-tail boat", "The lake itself: best with an overnight"]
+      ],
+      "sections": [
+        {
+          "h": "Day trip or overnight? Start with the two zones",
+          "p": "Khao Sok is not one place. The park HQ in Phanom District is the rainforest, the trails, the waterfalls and the village; Cheow Lan Lake lies about 50 km west in Ban Ta Khun District and is reached only by boat from the Ratchaprapha Dam. A day trip from the Andaman coast can genuinely deliver the first. It cannot deliver the second without most of the day spent in a vehicle and on the water.",
+          "list": [
+            "HQ day trip — drive, walk, eat, drive back; the lake is not involved",
+            "Lake day trip — technically possible, but about 6–7 h of road travel plus about 2 h of boat travel",
+            "Lake overnight — the only way to see the water at dawn, when it is calmest"
+          ]
+        },
+        {
+          "h": "A day trip that actually works from Phuket or Krabi",
+          "p": "Leaving the coast at 06:00 puts you at the HQ checkpoint around 08:30–09:30. That leaves five to six hours of daylight before you need to start back. It is enough for a marked trail to a waterfall and an unhurried lunch in the village, and not enough to add the lake.",
+          "list": [
+            "06:00 — leave the coast",
+            "08:30–09:30 — park HQ: pay the entrance fee and start walking",
+            "13:00–14:00 — food and shade in the village",
+            "15:00–16:00 — start the return drive",
+            "19:00–20:00 — back on the coast"
+          ]
+        },
+        {
+          "h": "Overnight: one night is the working minimum",
+          "p": "Two structures cover almost every visitor. Sleep in the village by the park HQ and walk trails across two mornings, or sleep on a raft house on the lake and treat the road journey as a one-time cost. If you want both zones, stay one night in each and allow about an hour to transfer between them.",
+          "list": [
+            "One night at the HQ village — two morning walks, no boat involved, lowest cost",
+            "One night on the lake — boat in during the afternoon, dawn on the water, out after breakfast",
+            "One night in each zone — adds about 1 h of driving in between"
+          ]
+        },
+        {
+          "h": "Inside the park: the clock matters more than the distance",
+          "p": "Park rules shape an itinerary more than mileage does. The park is open 06:00–18:00, overnight stays are allowed only in designated lodges, licensed raft houses or the campsite, and boats on Cheow Lan Lake may not sail before sunrise or after sunset. Night wildlife spotting happens only in the HQ zone and only with a guide.",
+          "list": [
+            "Keep long drives in daylight — the final roads into the park are unlit",
+            "There are no dawn or dusk boat crossings; the last boats run in daylight",
+            "Afternoon storms from May to November are the most common reason a plan slips"
+          ]
+        },
+        {
+          "h": "Moving between the coast and the park",
+          "p": "Shared minivans and buses link Surat Thani, the airports, Phuket, Krabi and Khao Lak with the park area, usually with a change in Surat Thani or the nearest town. Private transfers cost more and remove the change. Self-driving gives the most freedom and the least flexibility in heavy rain. This page does not recommend or book any of them: compare operators yourself, and confirm whether the price includes the lake boat before you pay.",
+          "list": [
+            "Public minivan or bus — cheapest, with a change en route",
+            "Private transfer — door to door, priced per vehicle",
+            "Self-drive — most freedom for covering both zones, least pleasant in a downpour"
+          ]
+        },
+        {
+          "h": "Three planning mistakes that cause most disappointment",
+          "p": "Most let-downs come from three errors: treating the park HQ and the lake pier as one place, budgeting travel time at map speed, and assuming a day trip can include the lake. A fourth is booking an overnight without checking whether the transfer boat is included — the difference between arriving at your raft house and standing at a pier at 15:00.",
+          "list": [
+            "The HQ and the lake pier are about 50 km apart and in different districts",
+            "Add at least 30% to online drive times in the rainy season",
+            "Confirm boats, meals and pick-up points before paying"
+          ]
+        },
+        {
+          "h": "A note on how this page is written",
+          "p": "This is an independent information page. We do not sell tours, accept commissions, or rank and recommend specific operators, raft houses or hotels. Everything here is planning arithmetic and park rules that you can apply to whichever operator and accommodation you choose."
+        }
+      ],
+      "faqTitle": "Khao Sok from Phuket and Krabi: frequently asked questions",
+      "faqs": [
+        { "q": "Can I see Cheow Lan Lake as a day trip from Phuket?", "a": "Not comfortably. From Phuket the pier is 2.5–3 hours each way, and the boat ride to the main raft-house area is about an hour each way — roughly 8 hours of travelling for a few hours on the water, and boats are limited to daylight." },
+        { "q": "Is a Khao Sok day trip from Krabi worth it?", "a": "For the park HQ and the forest trails, yes: the drive is about 2.5 hours each way and a six-hour visit is realistic. For the lake, staying one night makes far better use of the trip." },
+        { "q": "How many days do I need for both zones?", "a": "Two days and one night per zone is comfortable: one night at the HQ village for the trails, then about an hour's drive to the lake pier for a raft-house night." },
+        { "q": "What time should I leave Phuket or Krabi?", "a": "Around 06:00 for a day trip. That puts you at the HQ checkpoint by roughly 08:30–09:30 and leaves enough daylight for the return drive." },
+        { "q": "Can I stay inside the park overnight?", "a": "Yes, but only in designated accommodation: lodges in the HQ village, licensed raft houses on the lake, or the campsite by the visitor centre. Day visitors are expected to leave by the 18:00 closing time." },
+        { "q": "Do I need a guide?", "a": "Not for the marked trails at the HQ. Guided walks are required for night wildlife spotting, cave visits and longer jungle routes, and lake crossings always run with a boat operator." }
+      ],
+      "note": "Times are estimates for normal traffic and daylight conditions. Park rules, fees, boat hours and access arrangements can change — if prices change, the on-site notice prevails; confirm current details with the national park or your accommodation before travelling.",
+      "relatedTitle": "Plan the rest of your trip",
+      "backHome": "Back to the full Khao Sok guide"
     }
   }
 }

@@ -18,7 +18,7 @@ const coordsLabel = hero.coordsLabel;
 ---
 
 <section id="home" class="relative min-h-screen flex items-end overflow-hidden">
-  <img src={heroImg} alt={main} class="absolute inset-0 w-full h-full object-cover" />
+  <img src={heroImg} alt={hero.imageAlt || main} loading="eager" class="absolute inset-0 w-full h-full object-cover" />
   <div class="absolute inset-0 bg-gradient-to-t from-teakDeep via-teakDeep/70 to-teak/40"></div>
   <div class="hero-glow absolute inset-0"></div>
 
@@ -49,6 +49,15 @@ const coordsLabel = hero.coordsLabel;
       <a href={mapsUrl} target="_blank" rel="noopener" class="mt-5 inline-flex items-center gap-2 text-goldBright hover:text-gold underline-offset-4 hover:underline text-sm">
         {hero.viewLocation}
       </a>
+
+      <!-- Google 评价来源声明（规避违规风险）-->
+      <p class="mt-2 text-xs text-ivory/60">
+        {hero.reviewsFromGoogle} ·{' '}
+        <a href={mapsUrl} target="_blank" rel="noopener" class="text-goldBright underline-offset-2 hover:underline">
+          {hero.viewAllReviews} ↗
+        </a>
+      </p>
+      <p class="mt-1 text-[11px] leading-relaxed text-ivory/45">{hero.ratingSourceNote}</p>
 
       <!-- wooden park signboard + carousel dots (bottom-left) -->
       <div class="wood-sign mt-8 inline-block max-w-md px-5 py-4">

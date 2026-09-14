@@ -7,6 +7,8 @@ import About from '../../components/About.astro';
 import Ecosystem from '../../components/Ecosystem.astro';
 import History from '../../components/History.astro';
   import Guide from '../../components/Guide.astro';
+  import Weather from '../../components/Weather.astro';
+  import StickyCta from '../../components/StickyCta.astro';
   import Sources from '../../components/Sources.astro';
   import Food from '../../components/Food.astro';
 import Gallery from '../../components/Gallery.astro';
@@ -26,10 +28,11 @@ const { lang, messages } = await getI18n(Astro.url);
   <Header lang={lang} messages={messages} />
   <main>
     <Hero lang={lang} messages={messages} />
-    <About messages={messages} />
+    <About lang={lang} messages={messages} />
     <Ecosystem messages={messages} />
     <History messages={messages} />
     <Guide messages={messages} />
+    <Weather lang={lang} messages={messages} />
     <Food messages={messages} />
     <Gallery messages={messages} />
     <Reviews messages={messages} />
@@ -37,4 +40,5 @@ const { lang, messages } = await getI18n(Astro.url);
     <MapSection lang={lang} messages={messages} />
   </main>
   <Footer lang={lang} messages={messages} />
+  <StickyCta messages={messages} />
 </BaseLayout>

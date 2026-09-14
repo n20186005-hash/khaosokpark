@@ -39,5 +39,9 @@ const foodImg = `/gallery/${siteConfig.galleryPrefix}5.jpg`;
       “{food.quote.text}”
       <footer class="text-sm not-italic text-ivory/60 mt-2">— {food.quote.author}</footer>
     </blockquote>
+
+    {food.note && (
+      <p class="mt-6 text-xs text-ivory/55 leading-relaxed">{food.note}</p>
+    )}
   </div>
 </section>

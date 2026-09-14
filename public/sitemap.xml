@@ -28,49 +28,91 @@
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
+
+  <!-- Cheow Lan Lake（湖区专项页） -->
   <url>
-    <loc>https://khaosokpark.com/th/privacy-policy/</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <loc>https://khaosokpark.com/th/cheow-lan-lake/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://khaosokpark.com/th/cheow-lan-lake/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://khaosokpark.com/en/cheow-lan-lake/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://khaosokpark.com/zh/cheow-lan-lake/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://khaosokpark.com/th/cheow-lan-lake/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://khaosokpark.com/en/privacy-policy/</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <loc>https://khaosokpark.com/en/cheow-lan-lake/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://khaosokpark.com/th/cheow-lan-lake/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://khaosokpark.com/en/cheow-lan-lake/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://khaosokpark.com/zh/cheow-lan-lake/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://khaosokpark.com/th/cheow-lan-lake/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://khaosokpark.com/zh/privacy-policy/</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <loc>https://khaosokpark.com/zh/cheow-lan-lake/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://khaosokpark.com/th/cheow-lan-lake/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://khaosokpark.com/en/cheow-lan-lake/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://khaosokpark.com/zh/cheow-lan-lake/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://khaosokpark.com/th/cheow-lan-lake/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Getting There（交通指南页） -->
+  <url>
+    <loc>https://khaosokpark.com/th/getting-there/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://khaosokpark.com/th/getting-there/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://khaosokpark.com/en/getting-there/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://khaosokpark.com/zh/getting-there/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://khaosokpark.com/th/getting-there/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://khaosokpark.com/th/terms-of-service/</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <loc>https://khaosokpark.com/en/getting-there/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://khaosokpark.com/th/getting-there/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://khaosokpark.com/en/getting-there/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://khaosokpark.com/zh/getting-there/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://khaosokpark.com/th/getting-there/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://khaosokpark.com/en/terms-of-service/</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <loc>https://khaosokpark.com/zh/getting-there/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://khaosokpark.com/th/getting-there/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://khaosokpark.com/en/getting-there/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://khaosokpark.com/zh/getting-there/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://khaosokpark.com/th/getting-there/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Khao Sok from Phuket & Krabi（行程规划页） -->
+  <url>
+    <loc>https://khaosokpark.com/th/khao-sok-from-phuket-krabi/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://khaosokpark.com/th/khao-sok-from-phuket-krabi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://khaosokpark.com/en/khao-sok-from-phuket-krabi/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://khaosokpark.com/zh/khao-sok-from-phuket-krabi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://khaosokpark.com/th/khao-sok-from-phuket-krabi/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://khaosokpark.com/zh/terms-of-service/</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <loc>https://khaosokpark.com/en/khao-sok-from-phuket-krabi/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://khaosokpark.com/th/khao-sok-from-phuket-krabi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://khaosokpark.com/en/khao-sok-from-phuket-krabi/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://khaosokpark.com/zh/khao-sok-from-phuket-krabi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://khaosokpark.com/th/khao-sok-from-phuket-krabi/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://khaosokpark.com/th/cookie-settings/</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://khaosokpark.com/en/cookie-settings/</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://khaosokpark.com/zh/cookie-settings/</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <loc>https://khaosokpark.com/zh/khao-sok-from-phuket-krabi/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://khaosokpark.com/th/khao-sok-from-phuket-krabi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://khaosokpark.com/en/khao-sok-from-phuket-krabi/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://khaosokpark.com/zh/khao-sok-from-phuket-krabi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://khaosokpark.com/th/khao-sok-from-phuket-krabi/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>

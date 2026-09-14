@@ -5,13 +5,12 @@ interface Props {
   lang: any;
   messages: Record<string, any>;
 }
-const { messages } = Astro.props;
+const { messages, lang } = Astro.props;
 const map = messages.mapSection;
-const { lat, lng } = siteConfig.coords;
+const entity = siteConfig.entity;
 
-// Google Maps embed: unified English UI for all languages
-const pbBase = '!1m18!1m12!1m3!1d3940.9395145303015!2d98.63818789999999!3d8.977713399999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3051287e3275975f%3A0x8e7f172ecc1fad30!2sKhao%20Sok%20National%20Park!5e0!3m2';
-const embedSrc = `https://www.google.com/maps/embed?pb=${pbBase}!5m2!1sen!2sus`;
+// Google Maps embed: unified English UI for all languages（与 siteConfig 中的实体嵌入保持一致）
+const embedSrc = siteConfig.mapsEmbedSrc;
 ---
 
 <section id="map" class="py-20 bg-ivory text-ink">
@@ -48,5 +47,27 @@ const embedSrc = `https://www.google.com/maps/embed?pb=${pbBase}!5m2!1sen!2sus`;
         <iframe src={embedSrc} width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
       </div>
     </div>
+
+    <!-- 权威出站链接（.go.th / .org）-->
+    <p class="mt-10 text-sm text-ink/80 max-w-3xl">
+      {map.officialNote}{' '}
+      <a
+        href={entity.govtTourismUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-gold font-semibold underline-offset-2 hover:underline"
+      >
+        {entity.govtTourismLabel[lang]} ↗
+      </a>
+      <span class="text-ink/40"> · </span>
+      <a
+        href={entity.govtParkUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-gold font-semibold underline-offset-2 hover:underline"
+      >
+        {entity.govtParkLabel[lang]} ↗
+      </a>
+    </p>
   </div>
 </section>

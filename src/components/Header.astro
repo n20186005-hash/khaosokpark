@@ -5,33 +5,38 @@ import { languages, languagesList, type Lang } from '../i18n/ui';
 interface Props {
   lang: Lang;
   messages: Record<string, any>;
+  /** 子页面路径段（不含语言段），用于让导航锚点与语言切换停留在当前页 */
+  path?: string;
 }
-const { lang, messages } = Astro.props;
+const { lang, messages, path } = Astro.props;
 const h = messages.header;
+const segment = path ? `${path}/` : '';
+const basePath = `/${lang}/${segment}`;
 
 const navItems = [
   { label: h.home, href: '#home' },
   { label: h.about, href: '#about' },
   { label: h.history, href: '#history' },
   { label: h.guide, href: '#guide' },
+  { label: h.weather, href: '#weather' },
   { label: h.food, href: '#food' },
   { label: h.gallery, href: '#gallery' },
   { label: h.reviews, href: '#reviews' },
   { label: h.map, href: '#map' },
 ];
 
-const switchTo = (target: Lang) => `/${target}/`;
+const switchTo = (target: Lang) => `/${target}/${segment}`;
 ---
 
 <header class="fixed top-0 inset-x-0 z-50 bg-teak/90 backdrop-blur-md border-b border-gold/20">
   <div class="max-w-7xl mx-auto px-5 h-16 flex items-center justify-between">
-    <a href={`/${lang}/`} class="font-display text-goldBright tracking-wide text-lg whitespace-nowrap">
+    <a href={basePath} class="font-display text-goldBright tracking-wide text-lg whitespace-nowrap">
       {siteConfig.name[lang]}
     </a>
 
     <nav class="hidden md:flex items-center md:gap-4 lg:gap-7 text-sm text-ivory/80">
       {navItems.map((item) => (
-        <a href={item.href} class="hover:text-goldBright transition-colors whitespace-nowrap">{item.label}</a>
+        <a href={`${basePath}${item.href}`} class="hover:text-goldBright transition-colors whitespace-nowrap">{item.label}</a>
       ))}
     </nav>
 
@@ -57,7 +62,7 @@ const switchTo = (target: Lang) => `/${target}/`;
   <nav id="mobile-menu" class="hidden md:hidden border-t border-gold/20 bg-teakDeep">
     <div class="max-w-7xl mx-auto px-5 py-3 grid grid-cols-2 gap-2 text-sm text-ivory/80">
       {navItems.map((item) => (
-        <a href={item.href} class="py-1.5 hover:text-goldBright transition-colors">{item.label}</a>
+        <a href={`${basePath}${item.href}`} class="py-1.5 hover:text-goldBright transition-colors">{item.label}</a>
       ))}
     </div>
   </nav>

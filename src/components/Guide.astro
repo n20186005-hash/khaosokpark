@@ -73,6 +73,9 @@ const guideImgs = [
             </li>
           ))}
         </ul>
+        {guide.fees.note && (
+          <p class="mt-4 text-xs text-ink/55 leading-relaxed">{guide.fees.note}</p>
+        )}
       </div>
 
       <!-- transport -->
@@ -219,6 +222,7 @@ const guideImgs = [
     {guide.nearby && (
       <div class="mt-14 max-w-4xl">
         <h3 class="font-display text-2xl text-teak mb-5">{guide.nearby.title}</h3>
+        {guide.nearby.lead && <p class="text-sm text-ink/75 -mt-2 mb-5">{guide.nearby.lead}</p>}
         <div class="grid sm:grid-cols-3 gap-4">
           {guide.nearby.items.map((it) => (
             <a href={it.url} target="_blank" rel="noopener" class="group rounded-2xl border border-gold/25 bg-white/50 p-5 hover:border-gold hover:shadow-md transition">

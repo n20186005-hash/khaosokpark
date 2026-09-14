@@ -1,0 +1,42 @@
+---
+import { siteConfig } from '../config';
+
+interface Props {
+  messages: Record<string, any>;
+}
+const { messages } = Astro.props;
+const cta = messages.cta;
+---
+
+<!-- 移动端固定快捷操作：一键拨号 + 一键导航（户外场景单手操作） -->
+<div class="h-16 md:hidden" aria-hidden="true"></div>
+
+<div
+  class="fixed bottom-0 inset-x-0 z-50 md:hidden border-t border-gold/25 bg-teak/95 backdrop-blur-md pb-[env(safe-area-inset-bottom)]"
+  aria-label={cta.label}
+>
+  <div class="max-w-7xl mx-auto px-4 py-2 grid grid-cols-2 gap-2">
+    <a
+      href={`tel:${siteConfig.phone}`}
+      class="flex items-center justify-center gap-2 rounded-full bg-gold text-teak font-semibold text-sm py-2.5 active:scale-95 transition-transform"
+    >
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <path
+          d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"
+        ></path>
+      </svg>
+      {cta.call}
+    </a>
+    <a
+      href={siteConfig.mapsUrl}
+      target="_blank"
+      rel="noopener"
+      class="flex items-center justify-center gap-2 rounded-full border border-gold/40 text-ivory text-sm py-2.5 active:scale-95 transition-transform"
+    >
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 11l19-9-9 19-2-8-8-2z"></path>
+      </svg>
+      {cta.directions}
+    </a>
+  </div>
+</div>

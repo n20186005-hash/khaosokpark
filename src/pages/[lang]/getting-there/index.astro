@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import StickyCta from '../../../components/StickyCta.astro';
+import InfoPage from '../../../components/InfoPage.astro';
+import { getI18n, languagesList } from '../../../i18n/ui';
+
+export async function getStaticPaths() {
+  return languagesList.map((lang) => ({ params: { lang } }));
+}
+
+const { lang, messages } = await getI18n(Astro.url);
+const doc = messages.pages.transport;
+const slug = 'getting-there';
+---
+
+<BaseLayout
+  lang={lang}
+  title={doc.meta.title}
+  description={doc.meta.description}
+  messages={messages}
+  path={slug}
+  breadcrumb={[{ name: doc.breadcrumb, hash: 'overview' }]}
+  faqs={doc.faqs}
+  entityDescription={messages.meta.description}
+>
+  <Header lang={lang} messages={messages} path={slug} />
+  <InfoPage
+    lang={lang}
+    doc={doc}
+    related={[{ label: messages.pages.lake.breadcrumb, href: `/${lang}/cheow-lan-lake/` }]}
+  />
+  <Footer lang={lang} messages={messages} path={slug} />
+  <StickyCta messages={messages} />
+</BaseLayout>

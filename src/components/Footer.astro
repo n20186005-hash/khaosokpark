@@ -4,10 +4,20 @@ import { siteConfig } from '../config';
 interface Props {
   lang: any;
   messages: Record<string, any>;
+  /** 子页面路径段（不含语言段），用于让页内锚点链接回到首页对应模块 */
+  path?: string;
 }
-const { lang, messages } = Astro.props;
+const { lang, messages, path } = Astro.props;
 const footer = messages.footer;
 const mapsUrl = siteConfig.mapsUrl;
+const basePath = `/${lang}/${path ? `${path}/` : ''}`;
+
+/* 专项页内部链接：从任意页面都能抵达，同时为湖区 / 交通 / 行程页分发权重 */
+const pageLinks = [
+  { label: messages.pages.lake.breadcrumb, slug: 'cheow-lan-lake' },
+  { label: messages.pages.transport.breadcrumb, slug: 'getting-there' },
+  { label: messages.pages.trips.breadcrumb, slug: 'khao-sok-from-phuket-krabi' },
+];
 ---
 
 <footer class="bg-teakDeep text-ivory pt-16 pb-8">
@@ -23,7 +33,19 @@ const mapsUrl = siteConfig.mapsUrl;
         <div class="text-xs uppercase tracking-wider text-gold mb-3">{footer.navTitle}</div>
         <ul class="grid grid-cols-2 gap-2 text-sm">
           {footer.navItems.map((n) => (
-            <li><a href={n.href} class="text-ivory/80 hover:text-goldBright transition-colors">{n.label}</a></li>
+            <li><a href={`${basePath}${n.href}`} class="text-ivory/80 hover:text-goldBright transition-colors">{n.label}</a></li>
+          ))}
+        </ul>
+
+        <!-- 专项页入口：湖区 / 交通 -->
+        <div class="text-xs uppercase tracking-wider text-gold mt-6 mb-3">{messages.pages.lake.relatedTitle}</div>
+        <ul class="space-y-2 text-sm">
+          {pageLinks.map((p) => (
+            <li>
+              <a href={`/${lang}/${p.slug}/`} class="text-ivory/80 hover:text-goldBright transition-colors">
+                {p.label} <span class="text-ivory/40">→</span>
+              </a>
+            </li>
           ))}
         </ul>
       </div>
@@ -74,6 +96,17 @@ const mapsUrl = siteConfig.mapsUrl;
       <p>{footer.disclaimerLead}</p>
       <p class="text-ivory/70">{footer.unofficial}</p>
       <p>{footer.dataSource}</p>
+      <p>{footer.imageRights}</p>
+      <p>
+        {footer.sourcesTitle}:{' '}
+        <a href={mapsUrl} target="_blank" rel="noopener noreferrer" class="text-goldBright underline-offset-2 hover:underline">
+          Google Maps
+        </a>
+        {' · '}
+        <a href={siteConfig.entity.govtTourismUrl} target="_blank" rel="noopener noreferrer" class="text-goldBright underline-offset-2 hover:underline">
+          Tourism Thailand
+        </a>
+      </p>
       <p class="pt-2 text-ivory/40">{footer.copyright}</p>
     </div>
   </div>

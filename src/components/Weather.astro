@@ -1,0 +1,226 @@
+---
+interface Props {
+  messages: Record<string, any>;
+  lang?: string;
+}
+const { messages, lang = 'th' } = Astro.props;
+const w = messages.weather;
+const locale = lang === 'th' ? 'th-TH' : lang === 'zh' ? 'zh-CN' : 'en-US';
+const api = import.meta.env.BASE_URL.replace(/\/$/, '') + '/api/weather';
+---
+
+<section id="weather" class="py-20 bg-sand text-ink">
+  <div class="max-w-7xl mx-auto px-5">
+    <p class="font-hand text-gold text-xl md:text-2xl">{w.label}</p>
+    <h2 class="font-display font-semibold text-3xl md:text-5xl text-teak mt-2">{w.heading}</h2>
+    <p class="mt-4 max-w-3xl text-ink/80">{w.lead}</p>
+    <p id="wx-updated" class="mt-2 text-xs text-ink/50"></p>
+
+    <div id="wx-root" class="mt-8" aria-live="polite">
+      <p class="text-sm text-ink/60">{w.loading}</p>
+    </div>
+  </div>
+</section>
+
+<script id="wx-i18n" type="application/json" set:html={JSON.stringify({ w, api, locale })}></script>
+
+<script is:inline>
+  (function () {
+    const cfg = JSON.parse(document.getElementById('wx-i18n').textContent || '{}');
+    const w = cfg.w || {};
+    const root = document.getElementById('wx-root');
+    const stamp = document.getElementById('wx-updated');
+    const esc = (s) => String(s == null ? '' : s);
+
+    const BFT = [1, 6, 12, 20, 29, 39, 50, 62, 75, 89, 103, 118];
+    const beaufort = (kmh) => BFT.filter((t) => kmh >= t).length;
+    const HEAVY = [63, 65, 66, 67, 81, 82];
+    const LIGHT = [51, 53, 55, 56, 57, 61, 80];
+    const STORM = [95, 96, 99];
+    const FOGGY = [45, 48];
+
+    const codeName = (c) => (w.codes && (w.codes[String(c)] || w.codes.other)) || '';
+    const icon = (c, day) => {
+      if (c === 0) return day ? '☀️' : '🌙';
+      if (c === 1) return day ? '🌤️' : '🌙';
+      if (c === 2) return '⛅';
+      if (c === 3) return '☁️';
+      if (FOGGY.includes(c)) return '🌫️';
+      if (HEAVY.includes(c)) return '🌧️';
+      if (LIGHT.includes(c)) return '🌦️';
+      if (STORM.includes(c)) return '⛈️';
+      return '🌤️';
+    };
+    const uvWord = (u) => {
+      const L = w.uvLevels || {};
+      return u >= 11 ? L.extreme : u >= 8 ? L.veryHigh : u >= 6 ? L.high : u >= 3 ? L.moderate : L.low;
+    };
+
+    // 条件触发规则（数值判定，与语言无关；文案来自 i18n，不满足条件则不渲染）
+    const rules = [
+      { id: 'rain60', test: (d) => d.rainProb >= 60 },
+      { id: 'drizzle', test: (d) => LIGHT.includes(d.code) || (d.rain > 0.2 && d.rainProb < 60) },
+      { id: 'rainHeavy', risk: 1, test: (d) => HEAVY.includes(d.code) || d.rainToday >= 20 },
+      { id: 'thunder', risk: 1, test: (d) => STORM.includes(d.code) },
+      { id: 'wind56', test: (d) => d.b >= 5 && d.b <= 6 },
+      { id: 'wind7', risk: 1, test: (d) => d.b >= 7 },
+      { id: 'hot', test: (d) => d.hi >= 32 },
+      { id: 'uvExtreme', risk: 1, test: (d) => d.uv >= 8 },
+      { id: 'uv', test: (d) => d.uv >= 5 },
+      { id: 'tempDiff', test: (d) => d.hi - d.lo > 8 },
+      { id: 'cold', test: (d) => d.hi <= 10 },
+      { id: 'humid', test: (d) => d.hum >= 88 || d.feels - d.temp >= 4 },
+      { id: 'sunny', test: (d) => d.code === 0 || d.code === 1 },
+      { id: 'cloudy', test: (d) => d.code === 2 || d.code === 3 },
+      { id: 'fog', risk: 1, test: (d) => FOGGY.includes(d.code) },
+      { id: 'wetTrail', test: (d) => d.rainToday >= 3 || d.rainProb >= 60 },
+    ];
+    const dtile = (label, value) =>
+      '<div class="rounded-xl bg-ivory/10 px-3 py-2">' +
+      '<p class="text-ivory/60">' + esc(label) + '</p>' +
+      '<p class="mt-0.5 font-semibold">' + esc(value) + '</p></div>';
+
+    const group = (key, hits) => {
+      const texts = [];
+      hits.forEach((h) => {
+        const t = (w.advice[h.id] || {})[key];
+        if (t && texts.indexOf(t) === -1) texts.push(t);
+      });
+      const list = texts.length ? texts : [w.groupEmpty[key]];
+      return (
+        '<div class="rounded-2xl border border-gold/25 bg-white/60 p-5">' +
+        '<h4 class="font-display text-lg text-teak">' + esc(w.groups[key]) + '</h4>' +
+        '<ul class="mt-3 space-y-2 text-sm text-ink/80">' +
+        list
+          .map(
+            (t) =>
+              '<li class="flex gap-2"><span class="text-gold">✚</span><span>' + esc(t) + '</span></li>'
+          )
+          .join('') +
+        '</ul></div>'
+      );
+    };
+
+    const scene = (key, level) => {
+      const s = w.scenes[key];
+      const tone =
+        level === 'stop'
+          ? 'border-rose-300 bg-rose-50 text-rose-900'
+          : level === 'caution'
+            ? 'border-amber-300 bg-amber-50 text-amber-900'
+            : 'border-emerald-200 bg-emerald-50 text-emerald-900';
+      const dot = level === 'stop' ? '⛔' : level === 'caution' ? '⚠️' : '✅';
+      return (
+        '<div class="rounded-2xl border ' + tone + ' p-5">' +
+        '<p class="font-display text-base font-semibold">' + dot + ' ' + esc(s.name) + '</p>' +
+        '<p class="mt-2 text-sm leading-relaxed">' + esc(s[level]) + '</p></div>'
+      );
+    };
+    const render = (d) => {
+      const now = d.now || {};
+      const days = d.days || [];
+      const today = days[0] || { hi: now.temp, lo: now.temp, p: 0, c: now.code, r: 0, u: 0, d: '' };
+      const b = beaufort(now.wind || 0);
+      const base = {
+        code: now.code, b: b, hum: now.hum, hi: today.hi, lo: today.lo,
+        uv: now.uv || 0, temp: now.temp, feels: now.feels,
+        rain: now.rain || 0, rainProb: now.rainProb || 0, rainToday: today.r || 0,
+      };
+      const day = Object.assign({}, base, {
+        code: today.c,
+        uv: Math.max(base.uv, today.u || 0),
+        rainProb: Math.max(base.rainProb, today.p || 0),
+        rainToday: Math.max(base.rainToday, base.rain),
+      });
+      const seen = {};
+      const hits = [];
+      [base, day].forEach((ctx) =>
+        rules.forEach((r) => {
+          if (!seen[r.id] && r.test(ctx)) { seen[r.id] = 1; hits.push(r); }
+        })
+      );
+      const has = (id) => hits.some((h) => h.id === id);
+      const risks = hits
+        .filter((h) => h.risk)
+        .map((h) => (w.advice[h.id] || {}).risk)
+        .filter(Boolean);
+
+      const alertBlock = risks.length
+        ? '<div class="rounded-2xl border-2 border-rose-300 bg-rose-50 p-5">' +
+          '<p class="font-display text-base font-semibold text-rose-700">⚠️ ' + esc(w.alertTitle) + '</p>' +
+          '<ul class="mt-2 space-y-1.5 text-sm text-rose-800">' +
+          risks.map((t) => '<li class="flex gap-2"><span>•</span><span>' + esc(t) + '</span></li>').join('') +
+          '</ul></div>'
+        : '<div class="rounded-2xl border border-emerald-200 bg-emerald-50 px-5 py-4 flex items-center gap-2 text-sm text-emerald-800">' +
+          '<span>✅</span><span>' + esc(w.alertNone) + '</span></div>';
+
+      const ridgeText =
+        d.ridge && d.ridge.temp != null
+          ? d.ridge.temp + '°C' + (d.ridge.diff ? ' · ' + w.mtnDiff.replace('{d}', d.ridge.diff) : '')
+          : '—';
+
+      const nowCard =
+        '<div class="rounded-2xl bg-teak text-ivory p-6 shadow-lg">' +
+        '<div class="flex items-start justify-between gap-4">' +
+        '<div><p class="text-xs uppercase tracking-wider text-gold">' + esc(w.nowTitle) + '</p>' +
+        '<p class="mt-1 font-display text-5xl font-semibold">' + now.temp + '°C</p>' +
+        '<p class="mt-1 text-sm text-ivory/85">' + esc(codeName(now.code)) + ' · ' + esc(w.feels) + ' ' + now.feels + '°C</p></div>' +
+        '<span class="text-5xl leading-none">' + icon(now.code, now.day) + '</span></div>' +
+        '<div class="mt-5 grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs">' +
+        dtile(w.humidity, (now.hum || 0) + '%') +
+        dtile(w.wind, (now.wind || 0) + ' km/h' + (b ? ' · ' + b + (w.beaufort || '') : '')) +
+        dtile(w.rainChance, (now.rainProb || 0) + '%') +
+        dtile(w.uv, (now.uv || 0).toFixed(1) + ' ' + uvWord(now.uv || 0)) +
+        dtile(w.mtnTitle, ridgeText) +
+        '</div></div>';
+      const wd = new Intl.DateTimeFormat(cfg.locale, { weekday: 'short', timeZone: 'Asia/Bangkok' });
+      const dayCards = days
+        .map((x, i) => {
+          const name = i === 0 ? w.today : wd.format(new Date(x.d + 'T12:00:00+07:00'));
+          const bad = STORM.includes(x.c) || HEAVY.includes(x.c) || (x.r || 0) >= 20;
+          const warn = !bad && ((x.p || 0) >= 60 || LIGHT.includes(x.c));
+          const tone = bad ? 'border-rose-200 bg-rose-50' : warn ? 'border-amber-200 bg-amber-50' : 'border-gold/25 bg-white/55';
+          return '<div class="rounded-xl border ' + tone + ' px-2 py-3 text-center">' +
+            '<p class="text-xs text-ink/60">' + esc(name) + '</p>' +
+            '<p class="mt-1 text-2xl leading-none">' + icon(x.c, true) + '</p>' +
+            '<p class="mt-1.5 text-sm font-semibold text-teak">' + x.hi + '° / ' + x.lo + '°</p>' +
+            '<p class="mt-1 text-[11px] text-ink/70">' + esc(w.rainShort) + ' ' + (x.p || 0) + '%</p>' +
+            '<p class="mt-0.5 text-[11px] ' + (bad ? 'text-rose-700' : 'text-ink/55') + '">' + esc(codeName(x.c)) + '</p>' +
+            '</div>';
+        })
+        .join('');
+
+      const rainy = has('rain60') || has('drizzle') || has('rainHeavy');
+      const lakeLv = has('thunder') || has('wind7') || has('rainHeavy') ? 'stop' : has('rain60') || has('wind56') || has('fog') ? 'caution' : 'ok';
+      const hikeLv = has('thunder') || (has('rainHeavy') && base.rainToday >= 40) ? 'stop' : has('wind56') || rainy || has('fog') || has('wetTrail') ? 'caution' : 'ok';
+      const forestLv = has('thunder') || base.rainToday >= 40 ? 'stop' : rainy || has('wetTrail') ? 'caution' : 'ok';
+
+      const head = (t, note) =>
+        '<h3 class="font-display font-semibold text-2xl md:text-3xl text-teak">' + esc(t) + '</h3>' +
+        (note ? '<p class="mt-2 text-sm text-ink/70 max-w-3xl">' + esc(note) + '</p>' : '');
+
+      root.innerHTML =
+        '<div class="space-y-8">' + alertBlock + nowCard +
+        '<div>' + head(w.adviceTitle) +
+        '<div class="mt-4 grid md:grid-cols-3 gap-4">' + group('outfit', hits) + group('plan', hits) + group('pack', hits) + '</div></div>' +
+        '<div>' + head(w.sceneTitle, w.sceneNote) +
+        '<div class="mt-4 grid md:grid-cols-3 gap-4">' + scene('lake', lakeLv) + scene('hike', hikeLv) + scene('forest', forestLv) + '</div></div>' +
+        '<div>' + head(w.forecastTitle) +
+        '<div class="mt-4 grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3">' + dayCards + '</div></div>' +
+        '<p class="text-xs text-ink/50 leading-relaxed">' + esc(w.alertNote) + '<br />' + esc(w.source) + '</p>' +
+        '</div>';
+
+      if (stamp) {
+        stamp.textContent =
+          w.updatedPrefix + ' ' +
+          new Date().toLocaleTimeString(cfg.locale, { hour: '2-digit', minute: '2-digit' });
+      }
+    };
+    fetch(cfg.api, { headers: { accept: 'application/json' } })
+      .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
+      .then(render)
+      .catch(() => {
+        root.innerHTML = '<p class="text-sm text-ink/70">' + esc(w.unavailable) + '</p>';
+      });
+  })();
+</script>

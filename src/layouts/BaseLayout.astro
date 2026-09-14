@@ -1,61 +1,165 @@
 ---
 import '../styles/global.css';
 import { siteConfig } from '../config';
-import { htmlLang, languagesList, type Lang } from '../i18n/ui';
+import { defaultLang, htmlLang, languagesList, type Lang } from '../i18n/ui';
 
 interface Props {
   lang: Lang;
   title: string;
   description: string;
   messages: Record<string, any>;
+  /** 子页面路径段（不含语言段与斜杠），如 'cheow-lan-lake'；首页留空 */
+  path?: string;
+  /** 子页面在首页之后追加的面包屑层级，hash 指向页内锚点 */
+  breadcrumb?: { name: string; hash: string }[];
+  /** 覆盖默认 FAQPage（子页面使用各自的 FAQ 内容） */
+  faqs?: { q: string; a: string }[];
+  /** 追加结构化数据节点 */
+  extraJsonLd?: Record<string, any>[];
+  /** 结构化数据中景点实体的描述，默认与页面 description 一致 */
+  entityDescription?: string;
+  /** 无索引价值的页面（法务等） */
+  noindex?: boolean;
 }
-const { lang, title, description, messages } = Astro.props;
-const canonical = `${siteConfig.domain}/${lang}/`;
+const {
+  lang,
+  title,
+  description,
+  messages,
+  path,
+  breadcrumb,
+  faqs: pageFaqs,
+  extraJsonLd = [],
+  entityDescription,
+  noindex = false,
+} = Astro.props;
 
-const faqs = (messages && messages.guide && messages.guide.faqs) ? messages.guide.faqs : [];
+const entity = siteConfig.entity;
+const segment = path ? `${path}/` : '';
+const langHome = `${siteConfig.domain}/${lang}/`;
+const canonical = `${langHome}${segment}`;
+const heroImageUrl = `${siteConfig.domain}${entity.images[0]}`;
+const entityImages = entity.images.map((p) => `${siteConfig.domain}${p}`);
 
-const jsonLd = [
+const faqs = pageFaqs ?? ((messages && messages.guide && messages.guide.faqs) ? messages.guide.faqs : []);
+
+/* 面包屑：首页输出地理归属层级，子页面输出 首页 → 子页面（可追加层级） */
+const breadcrumbItems = path
+  ? [
+      { position: 1, name: 'Home', item: langHome },
+      ...(breadcrumb ?? []).map((b, i) => ({
+        position: i + 2,
+        name: b.name,
+        item: `${canonical}#${b.hash}`,
+      })),
+    ]
+  : [
+      { position: 1, name: 'Home', item: langHome },
+      { position: 2, name: entity.fullName[lang], item: `${canonical}#about` },
+      { position: 3, name: entity.city, item: `${canonical}#map` },
+      { position: 4, name: entity.stateProvince, item: `${canonical}#map` },
+      { position: 5, name: entity.country, item: `${canonical}#map` },
+    ];
+
+const jsonLd: Record<string, any>[] = [
+  /* ---------------------------------------------------------------
+   * 1. TouristAttraction —— 单景点实体锚点（@id + image 强绑定）
+   * --------------------------------------------------------------- */
   {
     '@context': 'https://schema.org',
     '@type': 'TouristAttraction',
-    name: siteConfig.name[lang],
-    description,
-    image: `${siteConfig.domain}/gallery/khao-sok-national-park-1.jpg`,
-    url: canonical,
+    '@id': `${siteConfig.domain}/#attraction`,
+    name: entity.fullName[lang],
+    alternateName: [entity.shortName, `${entity.city} ${entity.fullName[lang]}`],
+    description: entityDescription ?? description,
+    url: langHome,
+    image: entityImages,
+    isAccessibleForFree: false,
+    publicAccess: true,
+    telephone: siteConfig.phone,
     address: {
       '@type': 'PostalAddress',
-      streetAddress: siteConfig.address,
-      addressCountry: 'TH',
+      streetAddress: `${entity.fullName[lang]}, ${entity.subLocality}`,
+      addressLocality: entity.city,
+      addressRegion: entity.stateProvince,
+      postalCode: entity.postalCode,
+      addressCountry: entity.countryCode,
     },
+    containedInPlace: [
+      { '@type': 'AdministrativeArea', name: entity.city },
+      { '@type': 'AdministrativeArea', name: entity.stateProvince },
+      { '@type': 'Country', name: entity.country },
+    ],
     geo: {
       '@type': 'GeoCoordinates',
-      latitude: siteConfig.coords.lat,
-      longitude: siteConfig.coords.lng,
+      latitude: entity.latitude,
+      longitude: entity.longitude,
     },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: siteConfig.rating,
-      reviewCount: siteConfig.reviewCount.replace(/,/g, ''),
-    },
+    hasMap: siteConfig.mapsUrl,
+    /* 说明：评分 / 评价数属第三方（Google 地图商家实体）聚合评分，本站为引用方，
+       按 Google 结构化数据政策不写入 JSON-LD，仅在页面展示并显著标注来源。 */
     openingHoursSpecification: [
       {
         '@type': 'OpeningHoursSpecification',
         dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-        opens: '06:00',
-        closes: '17:00',
+        opens: entity.openingHours.opens,
+        closes: entity.openingHours.closes,
       },
     ],
+    touristType: ['Nature lovers', 'Families', 'Adventure travellers'],
     sameAs: siteConfig.sameAs,
   },
+
+  /* ---------------------------------------------------------------
+   * 2. WebSite —— 站点实体，与景点实体互相引用
+   * --------------------------------------------------------------- */
   {
     '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: faqs.map((f) => ({
-      '@type': 'Question',
-      name: f.q,
-      acceptedAnswer: { '@type': 'Answer', text: f.a },
-    })),
+    '@type': 'WebSite',
+    '@id': `${siteConfig.domain}/#website`,
+    url: canonical,
+    name: siteConfig.name[lang],
+    inLanguage: htmlLang[lang],
+    about: { '@id': `${siteConfig.domain}/#attraction` },
+    publisher: {
+      '@type': 'Organization',
+      name: `© ${new Date().getFullYear()} ${siteConfig.name[lang]}`,
+      url: canonical,
+    },
   },
+
+  /* ---------------------------------------------------------------
+   * 3. BreadcrumbList —— 地理归属层级
+   * --------------------------------------------------------------- */
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    '@id': `${canonical}#breadcrumb`,
+    itemListElement: breadcrumbItems.map((b) => ({ '@type': 'ListItem', ...b })),
+  },
+
+  /* ---------------------------------------------------------------
+   * 4. FAQPage —— 抢占精选摘要 / AI 概览卡片
+   * --------------------------------------------------------------- */
+  ...(faqs.length
+    ? [
+        {
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          '@id': `${canonical}#faq`,
+          mainEntity: faqs.map((f: { q: string; a: string }) => ({
+            '@type': 'Question',
+            name: f.q,
+            acceptedAnswer: { '@type': 'Answer', text: f.a },
+          })),
+        },
+      ]
+    : []),
+
+  /* ---------------------------------------------------------------
+   * 5. 子页面追加节点（如湖区 / 交通专属实体）
+   * --------------------------------------------------------------- */
+  ...extraJsonLd,
 ];
 ---
 
@@ -64,21 +168,42 @@ const jsonLd = [
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0d2a2e" />
     <link rel="icon" type="image/jpeg" href={`/gallery/khao-sok-national-park-1.jpg`} />
+    <link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192.png" />
+
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content={siteConfig.name[lang]} />
+
+    <!-- TDK -->
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
+
+    <!-- Open Graph / 社交标签 -->
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={siteConfig.name[lang]} />
     <meta property="og:locale" content={htmlLang[lang]} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={`${siteConfig.domain}/gallery/khao-sok-national-park-1.jpg`} />
+    <meta property="og:image" content={heroImageUrl} />
+    <meta property="og:image:alt" content={`${entity.fullName[lang]} in ${entity.city}`} />
     <meta property="og:url" content={canonical} />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={heroImageUrl} />
+
     {languagesList.map((l) => (
-      <link rel="alternate" hreflang={htmlLang[l]} href={`${siteConfig.domain}/${l}/`} />
+      <link rel="alternate" hreflang={htmlLang[l]} href={`${siteConfig.domain}/${l}/${segment}`} />
     ))}
-    <link rel="alternate" hreflang="x-default" href={`${siteConfig.domain}/th/`} />
+    <link rel="alternate" hreflang="x-default" href={`${siteConfig.domain}/${defaultLang}/${segment}`} />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -88,7 +213,7 @@ const jsonLd = [
     />
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 
-    <!-- Google tag (gtag.js) -->
+    <!-- Google tag (gtag.js) — GA4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HXM22WWPKP"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -99,5 +224,14 @@ const jsonLd = [
   </head>
   <body class="grain">
     <slot />
+
+    <!-- PWA Service Worker 注册 -->
+    <script is:inline>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function () {
+          navigator.serviceWorker.register('/sw.js').catch(function () {});
+        });
+      }
+    </script>
   </body>
 </html>

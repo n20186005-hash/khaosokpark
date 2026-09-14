@@ -1,0 +1,60 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import StickyCta from '../../../components/StickyCta.astro';
+import InfoPage from '../../../components/InfoPage.astro';
+import { siteConfig } from '../../../config';
+import { getI18n, languagesList } from '../../../i18n/ui';
+
+export async function getStaticPaths() {
+  return languagesList.map((lang) => ({ params: { lang } }));
+}
+
+const { lang, messages } = await getI18n(Astro.url);
+const doc = messages.pages.lake;
+const slug = 'cheow-lan-lake';
+
+/* 湖区作为独立地理实体挂在公园实体之下（不含聚合评分） */
+const lakeNames: Record<string, string> = {
+  th: 'ทะเลสาบเชี้ยวหลาน',
+  en: 'Cheow Lan Lake',
+  zh: '乔兰湖',
+};
+
+const lakeJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'TouristAttraction',
+  '@id': `${siteConfig.domain}/#cheow-lan-lake`,
+  name: lakeNames[lang],
+  alternateName: ['Cheow Larn Lake', 'Chiew Larn Lake', 'ทะเลสาบเชี้ยวหลาน', '乔兰湖'],
+  description: doc.meta.description,
+  url: `${siteConfig.domain}/${lang}/${slug}/`,
+  image: siteConfig.entity.images.map((p) => `${siteConfig.domain}${p}`),
+  isAccessibleForFree: false,
+  containedInPlace: { '@id': `${siteConfig.domain}/#attraction` },
+  hasMap: siteConfig.mapsUrl,
+  touristType: ['Nature lovers', 'Photographers', 'Adventure travellers'],
+};
+---
+
+<BaseLayout
+  lang={lang}
+  title={doc.meta.title}
+  description={doc.meta.description}
+  messages={messages}
+  path={slug}
+  breadcrumb={[{ name: doc.breadcrumb, hash: 'overview' }]}
+  faqs={doc.faqs}
+  entityDescription={messages.meta.description}
+  extraJsonLd={[lakeJsonLd]}
+>
+  <Header lang={lang} messages={messages} path={slug} />
+  <InfoPage
+    lang={lang}
+    doc={doc}
+    related={[{ label: messages.pages.transport.breadcrumb, href: `/${lang}/getting-there/` }]}
+  />
+  <Footer lang={lang} messages={messages} path={slug} />
+  <StickyCta messages={messages} />
+</BaseLayout>
