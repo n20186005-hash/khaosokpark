@@ -11,14 +11,14 @@ export const siteConfig = {
   phone: '+6677395155',
   phoneDisplay: '+66 77 395 155',
 
-  // 评分 / 评价数——同步自 Google 地图商家实体（2026 年 9 月）
+  // 评分 / 评价数——同步自 Google 地图商家实体（2026 年 10 月）
   // 仅用于页面展示与来源标注；第三方聚合评分不写入 JSON-LD
   rating: 4.7,
-  reviewCount: '8,924',
+  reviewCount: '8,958',
   ratingSyncedAt: {
-    th: 'กันยายน 2569',
-    en: 'September 2026',
-    zh: '2026 年 9 月',
+    th: 'ตุลาคม 2569',
+    en: 'October 2026',
+    zh: '2026 年 10 月',
   },
 
   // 实际坐标（用于天气 / 日落 API 与地图嵌入）—— 考索国家公园总部 / Khlong Sok

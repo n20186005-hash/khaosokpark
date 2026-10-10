@@ -4,6 +4,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/Header.astro';
 import Hero from '../../components/Hero.astro';
 import About from '../../components/About.astro';
+import Essentials from '../../components/Essentials.astro';
 import Ecosystem from '../../components/Ecosystem.astro';
 import History from '../../components/History.astro';
   import Guide from '../../components/Guide.astro';
@@ -29,6 +30,7 @@ const { lang, messages } = await getI18n(Astro.url);
   <main>
     <Hero lang={lang} messages={messages} />
     <About lang={lang} messages={messages} />
+    <Essentials lang={lang} messages={messages} />
     <Ecosystem messages={messages} />
     <History messages={messages} />
     <Guide messages={messages} />

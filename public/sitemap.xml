@@ -115,4 +115,149 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <!-- Entrance Fee（门票专项页） -->
+  <url>
+    <loc>https://khaosokpark.com/th/entrance-fee/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://khaosokpark.com/th/entrance-fee/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://khaosokpark.com/en/entrance-fee/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://khaosokpark.com/zh/entrance-fee/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://khaosokpark.com/th/entrance-fee/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://khaosokpark.com/en/entrance-fee/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://khaosokpark.com/th/entrance-fee/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://khaosokpark.com/en/entrance-fee/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://khaosokpark.com/zh/entrance-fee/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://khaosokpark.com/th/entrance-fee/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://khaosokpark.com/zh/entrance-fee/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://khaosokpark.com/th/entrance-fee/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://khaosokpark.com/en/entrance-fee/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://khaosokpark.com/zh/entrance-fee/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://khaosokpark.com/th/entrance-fee/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Khao Sok Map（地图与两个入口专项页） -->
+  <url>
+    <loc>https://khaosokpark.com/th/khao-sok-map/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://khaosokpark.com/th/khao-sok-map/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://khaosokpark.com/en/khao-sok-map/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://khaosokpark.com/zh/khao-sok-map/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://khaosokpark.com/th/khao-sok-map/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://khaosokpark.com/en/khao-sok-map/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://khaosokpark.com/th/khao-sok-map/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://khaosokpark.com/en/khao-sok-map/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://khaosokpark.com/zh/khao-sok-map/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://khaosokpark.com/th/khao-sok-map/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://khaosokpark.com/zh/khao-sok-map/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://khaosokpark.com/th/khao-sok-map/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://khaosokpark.com/en/khao-sok-map/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://khaosokpark.com/zh/khao-sok-map/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://khaosokpark.com/th/khao-sok-map/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Best Time to Visit（最佳季节专项页） -->
+  <url>
+    <loc>https://khaosokpark.com/th/best-time-to-visit/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://khaosokpark.com/th/best-time-to-visit/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://khaosokpark.com/en/best-time-to-visit/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://khaosokpark.com/zh/best-time-to-visit/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://khaosokpark.com/th/best-time-to-visit/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://khaosokpark.com/en/best-time-to-visit/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://khaosokpark.com/th/best-time-to-visit/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://khaosokpark.com/en/best-time-to-visit/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://khaosokpark.com/zh/best-time-to-visit/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://khaosokpark.com/th/best-time-to-visit/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://khaosokpark.com/zh/best-time-to-visit/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://khaosokpark.com/th/best-time-to-visit/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://khaosokpark.com/en/best-time-to-visit/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://khaosokpark.com/zh/best-time-to-visit/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://khaosokpark.com/th/best-time-to-visit/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Jungle Trekking（丛林徒步专项页） -->
+  <url>
+    <loc>https://khaosokpark.com/th/jungle-trekking/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://khaosokpark.com/th/jungle-trekking/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://khaosokpark.com/en/jungle-trekking/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://khaosokpark.com/zh/jungle-trekking/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://khaosokpark.com/th/jungle-trekking/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://khaosokpark.com/en/jungle-trekking/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://khaosokpark.com/th/jungle-trekking/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://khaosokpark.com/en/jungle-trekking/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://khaosokpark.com/zh/jungle-trekking/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://khaosokpark.com/th/jungle-trekking/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://khaosokpark.com/zh/jungle-trekking/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://khaosokpark.com/th/jungle-trekking/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://khaosokpark.com/en/jungle-trekking/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://khaosokpark.com/zh/jungle-trekking/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://khaosokpark.com/th/jungle-trekking/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Floating Bungalows（水上浮屋专项页） -->
+  <url>
+    <loc>https://khaosokpark.com/th/floating-bungalows/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://khaosokpark.com/th/floating-bungalows/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://khaosokpark.com/en/floating-bungalows/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://khaosokpark.com/zh/floating-bungalows/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://khaosokpark.com/th/floating-bungalows/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://khaosokpark.com/en/floating-bungalows/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://khaosokpark.com/th/floating-bungalows/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://khaosokpark.com/en/floating-bungalows/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://khaosokpark.com/zh/floating-bungalows/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://khaosokpark.com/th/floating-bungalows/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://khaosokpark.com/zh/floating-bungalows/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://khaosokpark.com/th/floating-bungalows/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://khaosokpark.com/en/floating-bungalows/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://khaosokpark.com/zh/floating-bungalows/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://khaosokpark.com/th/floating-bungalows/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>

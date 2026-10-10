@@ -52,8 +52,9 @@ const lakeJsonLd = {
   <Header lang={lang} messages={messages} path={slug} />
   <InfoPage
     lang={lang}
+    messages={messages}
     doc={doc}
-    related={[{ label: messages.pages.transport.breadcrumb, href: `/${lang}/getting-there/` }]}
+    slug={slug}
   />
   <Footer lang={lang} messages={messages} path={slug} />
   <StickyCta messages={messages} />

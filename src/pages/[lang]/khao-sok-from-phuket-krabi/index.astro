@@ -28,11 +28,9 @@ const slug = 'khao-sok-from-phuket-krabi';
   <Header lang={lang} messages={messages} path={slug} />
   <InfoPage
     lang={lang}
+    messages={messages}
     doc={doc}
-    related={[
-      { label: messages.pages.transport.breadcrumb, href: `/${lang}/getting-there/` },
-      { label: messages.pages.lake.breadcrumb, href: `/${lang}/cheow-lan-lake/` },
-    ]}
+    slug={slug}
   />
   <Footer lang={lang} messages={messages} path={slug} />
   <StickyCta messages={messages} />

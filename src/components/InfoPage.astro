@@ -3,13 +3,31 @@ import type { Lang } from '../i18n/ui';
 
 interface Props {
   lang: Lang;
+  /** i18n 全量 messages */
+  messages: Record<string, any>;
   /** i18n messages.pages.<key> 的内容对象 */
   doc: any;
-  /** 指向其他专项页的链接 */
-  related?: { label: string; href: string }[];
+  /** 当前页 slug，用于生成同站专项页互链 */
+  slug?: string;
 }
-const { lang, doc, related = [] } = Astro.props;
+const { lang, messages, doc, slug } = Astro.props;
 const homeHref = `/${lang}/`;
+
+const keyBySlug: Record<string, string> = {
+  'entrance-fee': 'entranceFee',
+  'khao-sok-map': 'map',
+  'best-time-to-visit': 'bestTime',
+  'jungle-trekking': 'trekking',
+  'floating-bungalows': 'bungalows',
+  'getting-there': 'transport',
+  'khao-sok-from-phuket-krabi': 'trips',
+  'cheow-lan-lake': 'lake',
+};
+const siblingLinks = slug
+  ? Object.keys(keyBySlug)
+      .filter((s) => s !== slug)
+      .map((s) => ({ label: messages.pages[keyBySlug[s]].breadcrumb, href: `/${lang}/${s}/` }))
+  : [];
 ---
 
 <!-- 专项内容页版式：标题区 → 关键信息 → 表格 → 正文 → FAQ → 相关链接 -->
@@ -42,31 +60,33 @@ const homeHref = `/${lang}/`;
     </div>
   </section>
 
-  <section class="pb-12 bg-ivory">
-    <div class="max-w-5xl mx-auto px-5">
-      <h2 class="font-display text-2xl md:text-3xl text-teak">{doc.tableTitle}</h2>
-      <div class="mt-5 overflow-x-auto rounded-xl border border-teak/15">
-        <table class="w-full min-w-[600px] text-sm border-collapse">
-          <thead class="bg-teak text-ivory">
-            <tr>
-              {doc.tableHead.map((th: string) => (
-                <th class="text-left font-medium px-4 py-3 whitespace-nowrap">{th}</th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {doc.tableRows.map((row: string[], i: number) => (
-              <tr class={i % 2 ? 'bg-white/30' : 'bg-white/60'}>
-                {row.map((cell) => (
-                  <td class="px-4 py-3 align-top border-t border-teak/10 text-ink/85">{cell}</td>
+  {doc.tableTitle && (
+    <section class="pb-12 bg-ivory">
+      <div class="max-w-5xl mx-auto px-5">
+        <h2 class="font-display text-2xl md:text-3xl text-teak">{doc.tableTitle}</h2>
+        <div class="mt-5 overflow-x-auto rounded-xl border border-teak/15">
+          <table class="w-full min-w-[600px] text-sm border-collapse">
+            <thead class="bg-teak text-ivory">
+              <tr>
+                {doc.tableHead.map((th: string) => (
+                  <th class="text-left font-medium px-4 py-3 whitespace-nowrap">{th}</th>
                 ))}
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {doc.tableRows.map((row: string[], i: number) => (
+                <tr class={i % 2 ? 'bg-white/30' : 'bg-white/60'}>
+                  {row.map((cell) => (
+                    <td class="px-4 py-3 align-top border-t border-teak/10 text-ink/85">{cell}</td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  )}
 
   <section class="pb-14 bg-ivory">
     <div class="max-w-5xl mx-auto px-5 space-y-9">
@@ -113,7 +133,7 @@ const homeHref = `/${lang}/`;
         >
           {doc.backHome}
         </a>
-        {related.map((r) => (
+        {siblingLinks.map((r) => (
           <a
             href={r.href}
             class="rounded-full border border-gold/50 px-5 py-2 text-sm hover:bg-gold hover:text-teak transition-colors"
