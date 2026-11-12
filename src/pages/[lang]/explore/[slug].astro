@@ -1,0 +1,127 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import { getI18n, languagesList } from '../../../i18n/ui';
+import { expansion } from '../../../data/expansion';
+import { editorial } from '../../../data/editorial';
+import { siteConfig } from '../../../config';
+export function getStaticPaths() {
+  return languagesList.flatMap(lang => expansion.map(e => ({ params: { lang, slug: e[0] } })));
+}
+const { lang, messages } = await getI18n(Astro.url);
+const slug = Astro.params.slug!;
+const entry = expansion.find(e => e[0] === slug)!;
+const name = lang === 'th' ? entry[2] : lang === 'zh' ? entry[4] : entry[1];
+const subtitle = lang === 'th' ? entry[3] : lang === 'zh' ? entry[5] : entry[6];
+const intro = lang === 'th' ? entry[7] : lang === 'zh' ? entry[8] : entry[6];
+const detail = editorial[slug];
+const map = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${detail.map}, Thailand`)}`;
+const specific = detail[lang];
+const related = expansion.filter(e => e[0] !== slug && editorial[e[0]].scope === detail.scope).slice(0, 4);
+const photoCaptions = {
+ en: { 'sok-river':'Sok River at Khao Sok village', 'bamboo-forest':'Bamboo forest within Khao Sok National Park', 'rafflesia':'Rafflesia flower photographed near Khao Sok', 'park-entrance':'Khao Sok National Park entrance', 'footbridge':'Footbridge within Khao Sok National Park', 'lake-dawn':'Dawn over Cheow Lan Lake', 'coral-cave':'Limestone formations inside Pakarang (Coral) Cave', 'diamond-cave':'Pra Kai Petch (Diamond) Cave', 'ton-kloi':'Ton Kloi Waterfall', 'bang-hua-rat':'Bang Hua Rat Waterfall', 'wang-hin':'Rocky stream area at Wing Hin Waterfall', 'sip-et-chan':'Sip Et Chan Waterfall', 'nam-talu':'Guided group inside Nam Talu Cave' },
+ th: { 'sok-river':'แม่น้ำศกใกล้หมู่บ้านเขาสก', 'bamboo-forest':'ป่าไผ่ในอุทยานแห่งชาติเขาสก', 'rafflesia':'ดอกบัวผุดใกล้เขาสก', 'park-entrance':'ทางเข้าอุทยานแห่งชาติเขาสก', 'footbridge':'สะพานทางเดินในอุทยานแห่งชาติเขาสก', 'lake-dawn':'แสงเช้าที่ทะเลสาบเชี่ยวหลาน', 'coral-cave':'หินปูนในถ้ำปะการัง', 'diamond-cave':'ถ้ำประกายเพชร', 'ton-kloi':'น้ำตกโตนกลอย', 'bang-hua-rat':'น้ำตกบางหัวแรด', 'wang-hin':'ลำธารหินบริเวณน้ำตกวังหิน', 'sip-et-chan':'น้ำตกสิบเอ็ดชั้น', 'nam-talu':'กลุ่มนักเดินทางในถ้ำน้ำทะลุ' },
+ zh: { 'sok-river':'考索村附近的索克河', 'bamboo-forest':'考索国家公园内的竹林', 'rafflesia':'考索附近拍摄的大王花', 'park-entrance':'考索国家公园入口', 'footbridge':'考索国家公园内的步行桥', 'lake-dawn':'乔兰湖清晨景色', 'coral-cave':'珊瑚洞内的石灰岩沉积', 'diamond-cave':'钻石洞内部景观', 'ton-kloi':'通克洛伊瀑布', 'bang-hua-rat':'邦华叻瀑布', 'wang-hin':'旺欣瀑布附近的岩石溪流', 'sip-et-chan':'十一层瀑布', 'nam-talu':'向导团队在南塔鲁洞穴内' }
+}[lang] as Record<string,string>;
+const photoSources: Record<string,{ label:string; url:string }> = {
+ 'tang-nam':{label:'Tourism Authority of Thailand · Surat Thani guide, p. 37',url:'https://api.tat.or.th/upload/live/multimedia/9359/ESuratthani.pdf'},
+ 'sok-river':{label:'Wikimedia Commons · Sok River',url:'https://commons.wikimedia.org/wiki/File:Sok_River.jpg'},
+ 'bamboo-forest':{label:'Wikimedia Commons · Bamboo forest',url:'https://commons.wikimedia.org/wiki/File:Bamboo_forest_in_Khao_Sok_National_Park.jpg'},
+ 'rafflesia':{label:'Wikimedia Commons · Rafflesia kerrii',url:'https://commons.wikimedia.org/wiki/File:Rafflesia_kerrii_Khao_Sok.jpg'},
+ 'park-entrance':{label:'Wikimedia Commons · Park entrance',url:'https://commons.wikimedia.org/wiki/File:Khao_Sok_National_Park_entrance.jpg'},
+ 'footbridge':{label:'Wikimedia Commons · Footbridge',url:'https://commons.wikimedia.org/wiki/File:Footbridge_in_Khao_Sok_National_Park.jpg'},
+ 'lake-dawn':{label:'Wikimedia Commons · Cheow Lan dawn',url:'https://commons.wikimedia.org/wiki/File:Early_dawn_on_Cheow_Lan_Lake,_Khao_Sok,_Surat_Thani,_Thailand.jpg'},
+ 'coral-cave':{label:'Wikimedia Commons · Pakarang Cave',url:'https://commons.wikimedia.org/wiki/File:Limestone_in_Pakarang_cave_2.JPG'},
+ 'diamond-cave':{label:'Wikimedia Commons · Pra Kai Petch Cave',url:'https://commons.wikimedia.org/wiki/File:Pra_Kai_Petch_Cave_20240520.jpg'},
+ 'ton-kloi':{label:'Khao Sok Travel · Ton Kloi',url:'https://www.khaosoktravel.com/post/ton-kloi-waterfall-is-located-in-khao-sok-national-park'},
+ 'bang-hua-rat':{label:'TripNiceDay · Bang Hua Rat',url:'https://www.tripniceday.com/place/น้ำตกบางหัวแรด'},
+ 'wang-hin':{label:'Khao Sok Travel · Wing Hin',url:'https://www.khaosoktravel.com/services-1/wing-hin-waterfall'},
+ 'sip-et-chan':{label:'Khao Sok Travel · Sip Et Chan',url:'https://www.khaosoktravel.com/services-1/sip-et-chan-waterfall'},
+ 'nam-talu':{label:'Khaosok.Travel · Nam Talu',url:'https://www.khaosok.travel/cavetrekkhaosok'},
+};
+photoCaptions['tang-nam'] = {en:'Tang Nam Gorge in Khao Sok National Park',th:'ช่องเขาตั้งน้ำในอุทยานแห่งชาติเขาสก',zh:'考索国家公园唐南峡谷实景'}[lang];
+const management = {
+ en: detail.scope === 'village' || detail.scope === 'activity' ? 'The Khao Sok travel area includes village businesses and activities arranged by individual operators; these are not all directly managed by the national park. Protected park land is overseen by Thailand’s Department of National Parks, Wildlife and Plant Conservation (DNP). For river trips and transfers, the operating provider is responsible for its specific service.' : detail.scope === 'lake' ? 'Cheow Lan Lake is the reservoir formed by Ratchaprapha Dam. The dam and reservoir involve the Electricity Generating Authority of Thailand (EGAT), while activities within Khao Sok National Park are subject to the Department of National Parks, Wildlife and Plant Conservation (DNP) and ranger restrictions. Boat and raft-house services are provided by individual operators.' : 'Khao Sok National Park is managed by Thailand’s Department of National Parks, Wildlife and Plant Conservation (DNP). Rangers oversee protected trails, conservation rules and route closures. Exact guide and access rules vary by area and conditions.',
+ th: detail.scope === 'village' || detail.scope === 'activity' ? 'พื้นที่ท่องเที่ยวเขาสกมีธุรกิจหมู่บ้านและกิจกรรมจากผู้ประกอบการหลายราย มิใช่ทุกแห่งอยู่ภายใต้การบริหารโดยตรงของอุทยาน ส่วนพื้นที่คุ้มครองดูแลโดยกรมอุทยานแห่งชาติ สัตว์ป่า และพันธุ์พืช (DNP) สำหรับทริปแม่น้ำและรถรับส่งควรตรวจสอบผู้ให้บริการโดยตรง' : detail.scope === 'lake' ? 'ทะเลสาบเชี่ยวหลานเป็นอ่างเก็บน้ำจากเขื่อนรัชชประภา ซึ่งเกี่ยวข้องกับการไฟฟ้าฝ่ายผลิตแห่งประเทศไทย (กฟผ.) พื้นที่ภายในอุทยานเขาสกอยู่ภายใต้ข้อกำหนดของกรมอุทยานแห่งชาติฯ ส่วนเรือและแพพักดำเนินการโดยผู้ประกอบการแต่ละราย' : 'อุทยานแห่งชาติเขาสกอยู่ในความดูแลของกรมอุทยานแห่งชาติ สัตว์ป่า และพันธุ์พืช เจ้าหน้าที่ดูแลการอนุรักษ์ เส้นทาง และประกาศปิดพื้นที่ โดยข้อกำหนดเรื่องผู้นำทางและการเข้าถึงแตกต่างกันตามเส้นทาง',
+ zh: detail.scope === 'village' || detail.scope === 'activity' ? '考索旅游区域内的村庄商家与活动由不同经营者提供，并非全部由国家公园直接管理。保护区内的土地与步道由泰国国家公园、野生动物与植物保护厅（DNP）监管；河上活动、接驳服务的具体责任由相关经营者承担。' : detail.scope === 'lake' ? '乔兰湖是拉差帕帕大坝形成的水库，水坝及水库运营涉及泰国发电局（EGAT）；考索国家公园范围内的活动则受泰国国家公园、野生动物与植物保护厅（DNP）的保护与管理规定约束。船游和水上住宿由各经营者提供。' : '考索国家公园由泰国国家公园、野生动物与植物保护厅（DNP）管理。护林员负责保护区规定、步道管理和临时封闭。向导需求及通行条件会随路段与天气而变化。'
+}[lang];
+const labels = {
+ en:{management:'Who manages this area?',story:'Landscape, history and defining features',photos:'Photographs from the Khao Sok area',photoNote:'Photos are captioned by their identified location. Regional context photographs do not represent an exact waterfall or activity.',gallerySource:'Photo sources linked below',exact:'Exact destination search'},
+ th:{management:'หน่วยงานที่ดูแลพื้นที่',story:'ภูมิหลัง ภูมิประเทศ และจุดเด่น',photos:'ภาพถ่ายจากพื้นที่เขาสก',photoNote:'ภาพมีคำอธิบายตามสถานที่ที่ระบุได้ ภาพบรรยากาศพื้นที่ไม่ได้หมายถึงน้ำตกหรือกิจกรรมเฉพาะ',gallerySource:'แหล่งภาพอยู่ใต้ภาพ',exact:'ค้นหาสถานที่เฉพาะ'},
+ zh:{management:'本区域由谁管理？',story:'历史背景、地貌与特色观察',photos:'考索地区实景照片',photoNote:'照片依据可核实的地点标注；区域环境照片不代表某座具体瀑布或某项活动的现场。',gallerySource:'来源链接见图片下方',exact:'专属地点搜索'}
+}[lang];
+const copy = {
+ en: {
+  overview:'Explore', planning:'Before you go', highlights:'What to notice', about:'About this place or activity', facts:'Visitor essentials', route:'Suggested visit sequence', safety:'Visitor advice', photos:'Photography tips', transport:'Getting there and map', faq:'Frequently asked questions', related:'Continue exploring', source:'Sources and current conditions',
+  aboutText:`${intro} This guide focuses on ${entry[1]} within the wider Khao Sok travel region of Surat Thani, southern Thailand. The national park and the Cheow Lan reservoir are distinct areas, so a named excursion may have a different starting point from the park headquarters.`,
+  planText:'Start by deciding whether your day is based near Khao Sok village or at the Cheow Lan Lake side. Confirm access and transport with the park office or a locally licensed provider. Reserve time for weather changes; rain, changing water levels and ranger restrictions can affect the plan.',
+  highlightsText:'Look at the relationship between rainforest, water and limestone terrain. Take time to observe the surroundings from designated trails or stops, without collecting plants or approaching wildlife.',
+  factsRows:[['Region','Khao Sok area, Surat Thani, Thailand'],['Responsible authority','Thailand Department of National Parks, Wildlife and Plant Conservation (for national park areas)'],['Opening and access','Varies by site, route and weather; confirm with park staff'],['Tickets and guide fees','Check the current official fee schedule and operator inclusions'],['Best approach','Allow a flexible daylight itinerary and check conditions before departure']],
+  steps:['Confirm the exact destination and access point; the park entrance and lake pier are not interchangeable.','Check today’s weather, ranger advice, route status and necessary reservations.','Travel to the relevant starting point and follow signed or guided access.','Spend time observing the main landscape or activity without rushing.','Return before access limits or the last agreed transfer.'],
+  safetyText:'Wear grippy shoes, carry drinking water and rain protection, and respect closures. Do not enter caves, swollen streams or unmarked jungle trails without appropriate permission and guidance. Leave no litter.',
+  photoText:'Look for natural framing and changing light. In the forest, a steady hand and rain protection help; around the lake, keep cameras secured aboard boats. Avoid flash around animals and do not block paths.',
+  transportText:'Search for the exact named place, then verify the pin and actual departure point with a local operator. Some activities have no direct road access. This is a place-name search, not a verified Google Place ID.',
+  faqs:[['Can I visit independently?','Some public viewpoints and village services are independent, while forest trails, caves and boat outings can require guides or reservations. Confirm the rules for this specific route.'],['How long should I allow?','Duration varies greatly by weather, transfers and activity. Keep buffer time, especially if combining forest and reservoir areas.'],['Is it suitable in rain?','Heavy rain can make paths slippery, raise water levels and close caves or excursions. Follow park notices and choose a safer alternative when needed.']],
+  sourceText:'Use Thailand’s Department of National Parks and the Tourism Authority of Thailand for official notices. Maps are provided for orientation; always check access directly.',
+ },
+ th: {
+  overview:'สำรวจ', planning:'วางแผนก่อนเดินทาง', highlights:'สิ่งที่ควรสังเกต', about:'เกี่ยวกับสถานที่และกิจกรรม', facts:'ข้อมูลพื้นฐาน', route:'ลำดับการเที่ยวที่แนะนำ', safety:'ข้อควรระวัง', photos:'แนะนำการถ่ายภาพ', transport:'การเดินทางและแผนที่', faq:'คำถามที่พบบ่อย', related:'เที่ยวต่อ', source:'แหล่งข้อมูลและสถานการณ์ล่าสุด',
+  aboutText:`${intro} คู่มือนี้กล่าวถึง ${name} ในพื้นที่ท่องเที่ยวเขาสก จังหวัดสุราษฎร์ธานี โดยพื้นที่ป่าฝั่งหมู่บ้านและทะเลสาบเชี่ยวหลานมีจุดเริ่มต้นต่างกัน จึงควรตรวจสอบเส้นทางเฉพาะ`,
+  planText:'เลือกก่อนว่าจะพักฝั่งหมู่บ้านเขาสกหรือฝั่งทะเลสาบเชี่ยวหลาน สอบถามการเข้าถึงและรถรับส่งกับเจ้าหน้าที่หรือผู้ให้บริการในพื้นที่ เผื่อเวลาสำหรับฝนและการเปลี่ยนแปลงของระดับน้ำ',
+  highlightsText:'สังเกตความสัมพันธ์ระหว่างป่าดิบ น้ำ และภูเขาหินปูน เดินตามเส้นทางที่กำหนด ไม่เก็บพืชหรือเข้าใกล้สัตว์ป่า',
+  factsRows:[['พื้นที่','บริเวณเขาสก จังหวัดสุราษฎร์ธานี ประเทศไทย'],['หน่วยงานดูแล','กรมอุทยานแห่งชาติ สัตว์ป่า และพันธุ์พืช (สำหรับพื้นที่อุทยาน)'],['เวลาและการเข้าถึง','แตกต่างตามเส้นทางและสภาพอากาศ โปรดสอบถามเจ้าหน้าที่'],['ค่าเข้าและค่าผู้นำทาง','ตรวจสอบอัตราปัจจุบันและรายการที่รวมในทริป'],['การวางแผน','เตรียมเวลาเผื่อและตรวจสอบสภาพพื้นที่ก่อนออกเดินทาง']],
+  steps:['ยืนยันชื่อสถานที่และจุดเริ่มต้น เพราะทางเข้าอุทยานกับท่าเรืออยู่คนละแห่ง','ตรวจสอบพยากรณ์อากาศ คำแนะนำเจ้าหน้าที่ และการจองที่จำเป็น','เดินทางไปยังจุดเริ่มต้นและใช้เส้นทางที่ได้รับอนุญาต','ใช้เวลาสังเกตภูมิทัศน์และกิจกรรมโดยไม่เร่งรีบ','กลับก่อนหมดเวลาที่อนุญาตหรือรอบรถรับส่งที่นัดไว้'],
+  safetyText:'สวมรองเท้ากันลื่น พกน้ำดื่มและเสื้อกันฝน เคารพประกาศปิดเส้นทาง หลีกเลี่ยงถ้ำ ลำธารน้ำเชี่ยว และทางป่าที่ไม่มีป้ายหากไม่มีการอนุญาตหรือผู้นำทาง และไม่ทิ้งขยะ',
+  photoText:'ใช้แสงธรรมชาติและแนวต้นไม้เป็นกรอบภาพ ป้องกันอุปกรณ์จากความชื้น ยึดกล้องให้มั่นคงเมื่ออยู่บนเรือ ไม่ใช้แฟลชรบกวนสัตว์และไม่กีดขวางทางเดิน',
+  transportText:'ค้นหาชื่อสถานที่ที่ตรงกันบนแผนที่ แล้วยืนยันหมุดและจุดออกเดินทางจริงกับผู้ให้บริการ บางกิจกรรมไม่มีถนนเข้าถึงโดยตรง ลิงก์นี้เป็นการค้นหาชื่อ ไม่ใช่ Place ID ที่ยืนยันแล้ว',
+  faqs:[['เที่ยวเองได้หรือไม่','บางจุดเข้าชมเองได้ แต่เส้นทางในป่า ถ้ำ และเรืออาจต้องมีผู้นำทางหรือจองล่วงหน้า'],['ควรเผื่อเวลาเท่าไร','ขึ้นอยู่กับฝน การเดินทางและกิจกรรม ควรเผื่อเวลาโดยเฉพาะเมื่อสลับระหว่างป่ากับทะเลสาบ'],['ฝนตกยังเที่ยวได้ไหม','ฝนอาจทำให้เส้นทางลื่น น้ำสูง และปิดถ้ำหรือทริป ควรยึดประกาศของเจ้าหน้าที่']],
+  sourceText:'ตรวจสอบประกาศกับกรมอุทยานแห่งชาติฯ และการท่องเที่ยวแห่งประเทศไทย แผนที่ใช้ช่วยวางแผนเท่านั้น',
+ },
+ zh: {
+  overview:'探索', planning:'出发前规划', highlights:'值得观察的看点', about:'关于景点与活动', facts:'基本资料', route:'建议游览路线', safety:'游览须知', photos:'拍照机位与建议', transport:'交通指南与地图', faq:'常见问答', related:'继续探索', source:'资料来源与最新情况',
+  aboutText:`${intro} 本指南介绍泰国素叻他尼府考索旅行区域内的${name}。考索村附近的雨林与乔兰湖区并非同一个出发地点，具体活动应按所属区域安排交通。`,
+  planText:'先确定当日以考索村雨林区还是乔兰湖区为基地，向公园工作人员或当地合规经营者核对进入条件和接送方式。雨水、水位及管理部门的临时限制都可能改变安排，应保留机动时间。',
+  highlightsText:'留意雨林、水流与石灰岩地貌之间的关系。在指定步道或停留点慢慢观察，不采集植物、不靠近野生动物。',
+  factsRows:[['所在区域','泰国素叻他尼府考索地区'],['管理单位','泰国国家公园、野生动物与植物保护厅（国家公园范围内）'],['开放与通行','依具体地点、路线、天气而异；出发前向园方核实'],['门票及向导费用','以官方现行收费与所订行程包含项目为准'],['规划原则','尽量安排日间活动，并为交通及天气预留时间']],
+  steps:['确认具体景点与出发点，国家公园入口和湖区码头不可混为一谈','查询天气、园方公告、路线开放状态与是否需要预约','抵达对应起点，沿获准的步道或向导路线前进','放慢脚步观察主要景观，不追赶动物或擅自离开路线','在允许时间或约定交通接驳前返回'],
+  safetyText:'穿防滑鞋，携带饮水、雨具并遵守封闭告示。没有合适许可与向导时，不要进入涨水溪流、洞穴或无标识林道；带走垃圾。',
+  photoText:'利用树木轮廓和自然光构图。雨林需防潮，乘船时固定相机；拍摄动物避免闪光灯，不占据步道。',
+  transportText:'使用景点全名进行地图搜索，并向当地经营者确认地图标记与实际集合点。部分体验无法直接驾车抵达。以下是名称搜索链接，并非已核实的 Google 地点 ID。',
+  faqs:[['可以自行前往吗？','村庄设施及部分公共观景点可自行前往；雨林步道、洞穴与湖上活动可能需要向导或预约，应以现场规定为准。'],['需要停留多久？','取决于天气、接驳和活动类型。尤其是雨林与水库跨区游览，应预留充足时间。'],['雨天适合游览吗？','强降雨可能造成步道湿滑、水位上涨、洞穴或船游关闭。遵从园方通知并准备替代行程。']],
+  sourceText:'开放、收费和安全限制以泰国国家公园管理部门及泰国旅游局的最新公开信息为准；地图仅用于辅助定位。',
+ }
+}[lang];
+const jsonLd = {'@context':'https://schema.org','@type':'TouristDestination',name,description:intro,url:`${siteConfig.domain}/${lang}/explore/${slug}/`,touristType:'Nature and responsible tourism',containedInPlace:{'@id':`${siteConfig.domain}/#attraction`}};
+---
+<BaseLayout lang={lang} title={`${name} | Khao Sok Guide`} description={intro} messages={messages} path={`explore/${slug}`} extraJsonLd={[jsonLd]}>
+  <Header lang={lang} messages={messages} path={`explore/${slug}`} />
+  <main class="bg-ivory">
+    <section class="pt-28 pb-14 bg-teakDeep text-ivory"><div class="max-w-5xl mx-auto px-5">
+      <p class="text-gold text-sm tracking-widest uppercase">Khao Sok National Park · {entry[1]}</p>
+      <h1 class="font-display text-4xl md:text-5xl mt-3">{name}</h1><p class="mt-3 text-xl text-goldBright">{subtitle}</p>
+      <p class="mt-6 text-ivory/80 max-w-3xl leading-relaxed">{intro}</p>
+      <div class="flex flex-wrap gap-3 mt-7"><a href={map} target="_blank" rel="noopener noreferrer" class="rounded-full bg-gold text-teak px-5 py-2 font-medium">Google Maps ↗</a><a href={`/${lang}/explore/`} class="rounded-full border border-gold/50 px-5 py-2">{copy.related} →</a></div>
+    </div></section>
+    <section class="max-w-5xl mx-auto px-5 py-14 space-y-11">
+      <article><h2 class="font-display text-3xl text-teak">{copy.overview} {name}</h2><p class="mt-3 text-ink/85 leading-relaxed">{copy.aboutText}</p></article>
+      <article class="rounded-2xl border-l-4 border-gold bg-white p-6 md:p-8"><p class="text-xs uppercase tracking-widest text-teak/60">Khao Sok · {entry[1]}</p><h2 class="font-display text-2xl text-teak mt-2">{labels.management}</h2><p class="mt-4 leading-relaxed text-ink/85">{management}</p></article>
+      <article><h2 class="font-display text-2xl text-teak">{labels.story}</h2><p class="mt-3 leading-relaxed text-ink/85">{specific}</p></article>
+      {detail.photos.length > 0 && <article><h2 class="font-display text-2xl text-teak">{labels.photos}</h2><div class="grid sm:grid-cols-2 gap-5 mt-5">{detail.photos.map(photo => <figure class="overflow-hidden rounded-xl bg-white border border-teak/10"><img src={`/explore-photos/${photo}.jpg`} alt={photoCaptions[photo]} loading="lazy" decoding="async" class="w-full h-60 object-cover" /><figcaption class="p-3 text-sm text-ink/75">{photoCaptions[photo]} <a class="block text-xs underline mt-1" href={photoSources[photo].url} target="_blank" rel="noopener noreferrer">{photoSources[photo].label} ↗</a></figcaption></figure>)}</div><p class="text-xs text-ink/60 mt-3">{labels.photoNote} · {labels.gallerySource}</p></article>}
+      <article><h2 class="font-display text-2xl text-teak">{copy.planning}</h2><p class="mt-3 leading-relaxed">{copy.planText}</p></article>
+      <article><h2 class="font-display text-2xl text-teak">{copy.highlights}</h2><p class="mt-3 leading-relaxed">{copy.highlightsText}</p></article>
+      <article><h2 class="font-display text-2xl text-teak">{copy.facts}</h2><dl class="grid sm:grid-cols-2 gap-3 mt-5">{copy.factsRows.map(([label,value]) => <div class="rounded-xl border border-teak/15 bg-white p-4"><dt class="text-xs text-teak/70">{label}</dt><dd class="mt-1 text-ink/90">{value}</dd></div>)}</dl></article>
+      <article><h2 class="font-display text-2xl text-teak">{copy.route}</h2><ol class="mt-4 space-y-3">{copy.steps.map((step,i) => <li class="flex gap-4 rounded-xl bg-white border border-teak/10 p-4"><span class="text-gold font-bold">{i+1}.</span><span>{step}</span></li>)}</ol></article>
+      <article><h2 class="font-display text-2xl text-teak">{copy.safety}</h2><p class="mt-3 leading-relaxed">{copy.safetyText}</p></article>
+      <article><h2 class="font-display text-2xl text-teak">{copy.photos}</h2><p class="mt-3 leading-relaxed">{copy.photoText}</p></article>
+      <article><h2 class="font-display text-2xl text-teak">{copy.transport}</h2><p class="mt-3 leading-relaxed">{copy.transportText}</p><p class="mt-3 text-sm text-teak/70">{labels.exact}: {detail.map}, Thailand</p><a href={map} target="_blank" rel="noopener noreferrer" class="inline-block mt-4 text-teak underline">{entry[1]} · Google Maps ↗</a></article>
+    </section>
+    <section class="bg-teakDeep text-ivory py-14"><div class="max-w-5xl mx-auto px-5"><h2 class="font-display text-3xl">{copy.faq}</h2><div class="mt-6 space-y-3">{copy.faqs.map(([q,a]) => <details class="border border-gold/25 p-5 rounded-xl"><summary class="cursor-pointer">{q}</summary><p class="text-ivory/75 mt-3">{a}</p></details>)}</div>
+      <h2 class="font-display text-2xl mt-10">{copy.source}</h2><p class="text-ivory/75 mt-3">{copy.sourceText}</p>
+      <div class="flex flex-wrap gap-4 mt-4 text-goldBright"><a href="https://www.dnp.go.th/" target="_blank" rel="noopener noreferrer">DNP ↗</a><a href="https://www.tourismthailand.org/" target="_blank" rel="noopener noreferrer">Tourism Thailand ↗</a></div>
+      <h2 class="font-display text-2xl mt-10">{copy.related}</h2><div class="flex flex-wrap gap-3 mt-4">{related.map(e => <a class="border border-gold/40 rounded-full px-4 py-2 text-sm" href={`/${lang}/explore/${e[0]}/`}>{lang === 'th' ? e[2] : lang === 'zh' ? e[4] : e[1]} →</a>)}</div>
+      <div class="mt-8"><a class="underline text-goldBright" href={`/${lang}/explore/`}>{copy.related}: 30 {lang === 'th' ? 'หัวข้อ' : lang === 'zh' ? '个专题' : 'guides'} →</a></div>
+    </div></section>
+  </main>
+  <Footer lang={lang} messages={messages} path={`explore/${slug}`} />
+</BaseLayout>

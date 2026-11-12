@@ -12,6 +12,7 @@ const { lang, messages, path } = Astro.props;
 const h = messages.header;
 const segment = path ? `${path}/` : '';
 const basePath = `/${lang}/${segment}`;
+const homeAnchors = `/${lang}/`;
 
 const navItems = [
   { label: h.home, href: '#home' },
@@ -36,7 +37,7 @@ const switchTo = (target: Lang) => `/${target}/${segment}`;
 
     <nav class="hidden md:flex items-center md:gap-4 lg:gap-7 text-sm text-ivory/80">
       {navItems.map((item) => (
-        <a href={`${basePath}${item.href}`} class="hover:text-goldBright transition-colors whitespace-nowrap">{item.label}</a>
+        <a href={`${homeAnchors}${item.href}`} class="hover:text-goldBright transition-colors whitespace-nowrap">{item.label}</a>
       ))}
     </nav>
 
@@ -62,7 +63,7 @@ const switchTo = (target: Lang) => `/${target}/${segment}`;
   <nav id="mobile-menu" class="hidden md:hidden border-t border-gold/20 bg-teakDeep">
     <div class="max-w-7xl mx-auto px-5 py-3 grid grid-cols-2 gap-2 text-sm text-ivory/80">
       {navItems.map((item) => (
-        <a href={`${basePath}${item.href}`} class="py-1.5 hover:text-goldBright transition-colors">{item.label}</a>
+        <a href={`${homeAnchors}${item.href}`} class="py-1.5 hover:text-goldBright transition-colors">{item.label}</a>
       ))}
     </div>
   </nav>

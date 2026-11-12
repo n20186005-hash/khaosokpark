@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import { getI18n, languagesList } from '../../../i18n/ui';
+import { expansion } from '../../../data/expansion';
+export function getStaticPaths() { return languagesList.map(lang => ({ params: { lang } })); }
+const { lang, messages } = await getI18n(Astro.url);
+const title = { en: 'Explore Khao Sok: 30 detailed guides', th: 'สำรวจเขาสก: คู่มือ 30 หัวข้อ', zh: '探索考索：30篇专题指南' }[lang];
+const intro = { en: 'Waterfalls, forest ecology, lake landmarks, responsible activities and realistic itineraries. Choose a topic to plan the part of Khao Sok that interests you.', th: 'รวมเส้นทางน้ำตก ระบบนิเวศ จุดเที่ยวทะเลสาบ กิจกรรมที่รับผิดชอบ และแผนเที่ยว เลือกหัวข้อที่สนใจได้เลย', zh: '涵盖瀑布、雨林生态、湖区景点、负责任的游览活动与实际行程安排。选择感兴趣的主题深入阅读。' }[lang];
+---
+<BaseLayout lang={lang} title={title} description={intro} messages={messages} path="explore">
+  <Header lang={lang} messages={messages} path="explore" />
+  <main class="bg-ivory min-h-screen">
+    <section class="pt-28 pb-12 bg-teakDeep text-ivory"><div class="max-w-6xl mx-auto px-5">
+      <p class="text-gold">Khao Sok National Park</p><h1 class="font-display text-4xl md:text-5xl mt-3">{title}</h1><p class="mt-5 max-w-3xl text-ivory/80">{intro}</p>
+    </div></section>
+    <section class="max-w-6xl mx-auto px-5 py-14"><div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+      {expansion.map(e => <a href={`/${lang}/explore/${e[0]}/`} class="block bg-white rounded-2xl border border-teak/15 p-6 hover:border-gold transition-colors">
+        <p class="text-xs text-teak/60 tracking-widest uppercase">{e[1]}</p><h2 class="font-display text-xl text-teak mt-2">{lang === 'th' ? e[2] : lang === 'zh' ? e[4] : e[1]}</h2>
+        <p class="mt-3 text-ink/75 leading-relaxed">{lang === 'th' ? e[7] : lang === 'zh' ? e[8] : e[6]}</p>
+        <span class="inline-block mt-4 text-teak font-medium">{lang === 'th' ? 'อ่านคู่มือ' : lang === 'zh' ? '阅读指南' : 'Read guide'} →</span>
+      </a>)}
+    </div></section>
+  </main>
+  <Footer lang={lang} messages={messages} path="explore" />
+</BaseLayout>

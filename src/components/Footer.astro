@@ -10,7 +10,7 @@ interface Props {
 const { lang, messages, path } = Astro.props;
 const footer = messages.footer;
 const mapsUrl = siteConfig.mapsUrl;
-const basePath = `/${lang}/${path ? `${path}/` : ''}`;
+const basePath = `/${lang}/`;
 
 /* 专项页内部链接：从任意页面都能抵达，同时为湖区 / 交通 / 行程页分发权重 */
 const pageLinks = [
@@ -45,6 +45,7 @@ const pageLinks = [
         <!-- 专项页入口：湖区 / 交通 -->
         <div class="text-xs uppercase tracking-wider text-gold mt-6 mb-3">{messages.pages.lake.relatedTitle}</div>
         <ul class="space-y-2 text-sm">
+          <li><a href={`/${lang}/explore/`} class="text-goldBright hover:underline">{lang === 'th' ? 'สำรวจเขาสก · 30 คู่มือ' : lang === 'zh' ? '探索考索 · 30篇指南' : 'Explore Khao Sok · 30 guides'} →</a></li>
           {pageLinks.map((p) => (
             <li>
               <a href={`/${lang}/${p.slug}/`} class="text-ivory/80 hover:text-goldBright transition-colors">

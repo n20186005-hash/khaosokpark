@@ -12,6 +12,7 @@ import History from '../../components/History.astro';
   import StickyCta from '../../components/StickyCta.astro';
   import Sources from '../../components/Sources.astro';
   import Food from '../../components/Food.astro';
+import ExploreNearby from '../../components/ExploreNearby.astro';
 import Gallery from '../../components/Gallery.astro';
 import Reviews from '../../components/Reviews.astro';
 import MapSection from '../../components/MapSection.astro';
@@ -36,6 +37,7 @@ const { lang, messages } = await getI18n(Astro.url);
     <Guide messages={messages} />
     <Weather lang={lang} messages={messages} />
     <Food messages={messages} />
+    <ExploreNearby lang={lang} />
     <Gallery messages={messages} />
     <Reviews messages={messages} />
     <Sources messages={messages} />
