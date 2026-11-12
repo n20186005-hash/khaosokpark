@@ -1,0 +1,15 @@
+---
+import type { Lang } from '../i18n/ui';
+interface Props { lang: Lang; messages: Record<string, any> }
+const { lang, messages } = Astro.props;
+const label = lang === 'zh' ? '查看完整资料来源与图片授权' : lang === 'th' ? 'ดูแหล่งข้อมูลและสิทธิ์การใช้ภาพทั้งหมด' : 'View all sources and photo information';
+---
+<section id="sources" class="bg-teakDeep py-10 text-ivory">
+  <div class="max-w-5xl mx-auto px-5 flex flex-col sm:flex-row sm:items-center justify-between gap-5">
+    <div>
+      <p class="font-hand text-gold text-xl">{messages.sources.label}</p>
+      <h2 class="font-display text-2xl md:text-3xl mt-1">{messages.sources.heading}</h2>
+    </div>
+    <a href={`/${lang}/sources/`} class="inline-flex shrink-0 justify-center rounded-full border border-gold/50 px-6 py-3 text-goldBright text-sm hover:bg-gold hover:text-teak transition-colors">{label} →</a>
+  </div>
+</section>

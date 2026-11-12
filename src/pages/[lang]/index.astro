@@ -10,7 +10,7 @@ import History from '../../components/History.astro';
   import Guide from '../../components/Guide.astro';
   import Weather from '../../components/Weather.astro';
   import StickyCta from '../../components/StickyCta.astro';
-  import Sources from '../../components/Sources.astro';
+  import SourcesTeaser from '../../components/SourcesTeaser.astro';
   import Food from '../../components/Food.astro';
 import ExploreNearby from '../../components/ExploreNearby.astro';
 import Gallery from '../../components/Gallery.astro';
@@ -40,7 +40,7 @@ const { lang, messages } = await getI18n(Astro.url);
     <ExploreNearby lang={lang} />
     <Gallery messages={messages} />
     <Reviews messages={messages} />
-    <Sources messages={messages} />
+    <SourcesTeaser lang={lang} messages={messages} />
     <MapSection lang={lang} messages={messages} />
   </main>
   <Footer lang={lang} messages={messages} />

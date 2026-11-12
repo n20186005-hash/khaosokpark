@@ -42,6 +42,12 @@ const breadcrumbs = [
         {about.entityIntro && <p>{about.entityIntro}</p>}
         <p>{about.paragraph1}</p>
         <p>{about.paragraph2}</p>
+        <aside class="rounded-xl border border-gold/30 bg-white/50 p-5 not-italic text-sm leading-relaxed space-y-2">
+          <h3 class="font-display text-lg text-teak">{messages.footer.brand.name} · {messages.footer.brand.tagline}</h3>
+          <p>{messages.footer.about}</p>
+          <p>{messages.footer.note}</p>
+          <p>{messages.footer.unofficial}</p>
+        </aside>
         <blockquote class="border-l-4 border-gold pl-5 italic text-teak font-display text-xl my-6">
           “{about.quote}”
           <footer class="text-sm not-italic text-ink/60 mt-2">— {about.quoteAuthor}</footer>

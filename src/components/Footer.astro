@@ -1,119 +1,33 @@
 ---
-import { siteConfig } from '../config';
-
 interface Props {
-  lang: any;
+  lang: 'th' | 'en' | 'zh';
   messages: Record<string, any>;
-  /** 子页面路径段（不含语言段），用于让页内锚点链接回到首页对应模块 */
   path?: string;
 }
-const { lang, messages, path } = Astro.props;
-const footer = messages.footer;
-const mapsUrl = siteConfig.mapsUrl;
-const basePath = `/${lang}/`;
-
-/* 专项页内部链接：从任意页面都能抵达，同时为湖区 / 交通 / 行程页分发权重 */
-const pageLinks = [
-  { label: messages.pages.entranceFee.breadcrumb, slug: 'entrance-fee' },
-  { label: messages.pages.map.breadcrumb, slug: 'khao-sok-map' },
-  { label: messages.pages.bestTime.breadcrumb, slug: 'best-time-to-visit' },
-  { label: messages.pages.trekking.breadcrumb, slug: 'jungle-trekking' },
-  { label: messages.pages.bungalows.breadcrumb, slug: 'floating-bungalows' },
-  { label: messages.pages.transport.breadcrumb, slug: 'getting-there' },
-  { label: messages.pages.trips.breadcrumb, slug: 'khao-sok-from-phuket-krabi' },
-  { label: messages.pages.lake.breadcrumb, slug: 'cheow-lan-lake' },
-];
+const { lang, messages } = Astro.props;
+const legal = messages.footer;
+const copyright = lang === 'zh'
+  ? '© 2026 考索国家公园科普站 · 版权所有。'
+  : lang === 'th'
+    ? '© 2026 คู่มืออุทยานแห่งชาติเขาสก · สงวนลิขสิทธิ์'
+    : '© 2026 Khao Sok National Park Guide · All rights reserved.';
+const independent = lang === 'zh'
+  ? '本网站是一个独立的旅游信息项目。我们与任何政府机构或官方组织均无关联。'
+  : lang === 'th'
+    ? 'เว็บไซต์นี้เป็นโครงการข้อมูลท่องเที่ยวอิสระ ไม่มีความเกี่ยวข้องกับหน่วยงานรัฐบาลหรือองค์กรทางการใด ๆ'
+    : 'This is an independent travel information project, unaffiliated with any government agency or official organization.';
 ---
-
-<footer class="bg-teakDeep text-ivory pt-16 pb-8">
-  <div class="max-w-7xl mx-auto px-5">
-    <div class="grid md:grid-cols-3 gap-10">
-      <div>
-        <div class="font-display text-2xl text-goldBright">{footer.brand.name}</div>
-        <p class="font-hand text-gold text-lg mt-1">{footer.brand.tagline}</p>
-        <p class="mt-4 text-sm text-ivory/70 max-w-sm">{footer.about}</p>
-      </div>
-
-      <div>
-        <div class="text-xs uppercase tracking-wider text-gold mb-3">{footer.navTitle}</div>
-        <ul class="grid grid-cols-2 gap-2 text-sm">
-          {footer.navItems.map((n) => (
-            <li><a href={`${basePath}${n.href}`} class="text-ivory/80 hover:text-goldBright transition-colors">{n.label}</a></li>
-          ))}
-        </ul>
-
-        <!-- 专项页入口：湖区 / 交通 -->
-        <div class="text-xs uppercase tracking-wider text-gold mt-6 mb-3">{messages.pages.lake.relatedTitle}</div>
-        <ul class="space-y-2 text-sm">
-          <li><a href={`/${lang}/explore/`} class="text-goldBright hover:underline">{lang === 'th' ? 'สำรวจเขาสก · 30 คู่มือ' : lang === 'zh' ? '探索考索 · 30篇指南' : 'Explore Khao Sok · 30 guides'} →</a></li>
-          {pageLinks.map((p) => (
-            <li>
-              <a href={`/${lang}/${p.slug}/`} class="text-ivory/80 hover:text-goldBright transition-colors">
-                {p.label} <span class="text-ivory/40">→</span>
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      <div>
-        <div class="text-xs uppercase tracking-wider text-gold mb-3">{footer.noteTitle}</div>
-        <p class="text-sm text-ivory/70">{footer.note}</p>
-        <a
-          href={mapsUrl}
-          target="_blank"
-          rel="noopener"
-          class="mt-5 inline-flex items-center gap-2 bg-gold text-teak font-semibold px-5 py-2.5 rounded-full hover:bg-goldBright transition-colors"
-        >
-          {footer.mapsLabel}
-        </a>
-      </div>
+<footer class="bg-teakDeep text-ivory py-8 border-t border-gold/20">
+  <div class="max-w-7xl mx-auto px-5 flex flex-col md:flex-row md:items-center justify-between gap-5">
+    <div class="text-xs text-ivory/70 leading-relaxed space-y-2">
+      <p>{copyright}</p>
+      <p>{independent}</p>
     </div>
-
-    <!-- Sources / References -->
-    <div class="mt-12 border-t border-ivory/10 pt-8">
-      <div class="text-xs uppercase tracking-wider text-gold mb-3">{footer.sourcesTitle}</div>
-      <p class="text-sm text-ivory/70 max-w-2xl mb-4">{footer.sourcesNote}</p>
-      <ul class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-3 text-sm">
-        {siteConfig.sources.map((s) => (
-          <li>
-            <a
-              href={s.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-goldBright hover:underline inline-flex items-center gap-1"
-            >
-              {s.name[lang]} <span class="text-ivory/40">↗</span>
-            </a>
-          </li>
-        ))}
-      </ul>
-    </div>
-
-    <div class="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-xs">
-      <a href={`/${lang}/privacy-policy`} class="text-ivory/60 hover:text-goldBright underline-offset-2 hover:underline">{footer.privacy}</a>
-      <a href={`/${lang}/terms-of-service`} class="text-ivory/60 hover:text-goldBright underline-offset-2 hover:underline">{footer.terms}</a>
-      <a href={`/${lang}/cookie-settings`} class="text-ivory/60 hover:text-goldBright underline-offset-2 hover:underline">{footer.cookies}</a>
-    </div>
-
-    <div class="ornament my-10 opacity-60"></div>
-
-    <div class="text-xs text-ivory/50 leading-relaxed space-y-2">
-      <p>{footer.disclaimerLead}</p>
-      <p class="text-ivory/70">{footer.unofficial}</p>
-      <p>{footer.dataSource}</p>
-      <p>{footer.imageRights}</p>
-      <p>
-        {footer.sourcesTitle}:{' '}
-        <a href={mapsUrl} target="_blank" rel="noopener noreferrer" class="text-goldBright underline-offset-2 hover:underline">
-          Google Maps
-        </a>
-        {' · '}
-        <a href={siteConfig.entity.govtTourismUrl} target="_blank" rel="noopener noreferrer" class="text-goldBright underline-offset-2 hover:underline">
-          Tourism Thailand
-        </a>
-      </p>
-      <p class="pt-2 text-ivory/40">{footer.copyright}</p>
-    </div>
+    <nav class="flex flex-wrap gap-x-4 gap-y-2 text-xs text-ivory/70" aria-label="Site information">
+      <a class="hover:text-goldBright" href={`/${lang}/sources/`}>{legal.sourcesTitle}</a>
+      <a class="hover:text-goldBright" href={`/${lang}/privacy-policy/`}>{legal.privacy}</a>
+      <a class="hover:text-goldBright" href={`/${lang}/terms-of-service/`}>{legal.terms}</a>
+      <a class="hover:text-goldBright" href={`/${lang}/cookie-settings/`}>{legal.cookies}</a>
+    </nav>
   </div>
 </footer>

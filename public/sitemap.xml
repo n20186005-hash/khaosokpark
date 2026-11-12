@@ -1097,4 +1097,29 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <!-- Independent sources and photo information, translated in all site languages -->
+  <url>
+    <loc>https://khaosokpark.com/th/sources/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://khaosokpark.com/th/sources/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://khaosokpark.com/en/sources/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://khaosokpark.com/zh/sources/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://khaosokpark.com/th/sources/"/>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://khaosokpark.com/en/sources/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://khaosokpark.com/th/sources/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://khaosokpark.com/en/sources/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://khaosokpark.com/zh/sources/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://khaosokpark.com/th/sources/"/>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://khaosokpark.com/zh/sources/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://khaosokpark.com/th/sources/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://khaosokpark.com/en/sources/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://khaosokpark.com/zh/sources/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://khaosokpark.com/th/sources/"/>
+    <priority>0.5</priority>
+  </url>
 </urlset>
